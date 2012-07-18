@@ -1,0 +1,62 @@
+~~~~~~~
+Phase 1
+-------
+
+Create Database
+	Make Schema
+	Create Table sql
+	insert row sql
+Commands:
+	create:
+		sqlite3.exe kb_1.db < create_table.sql
+	drop:
+		sqlite3.exe kb_1.db < drop_table.sql
+	insert:
+		sqlite3.exe kb_1.db < insert.sql
+	select:
+		sqlite3.exe kb_1.db < selete.sql
+
+Functional and Logical pieces
+	Add:
+	AddSection.pl
+		input: database,name,sectionid
+		output: pass or fail
+		side effect: insert into table_section
+
+	AddUser.pl
+		input: database,name,username,email
+		output: pass or fail
+		side effect: insert to table_user
+	AddEntry.pl
+		input: database,name,content,username,section,tags
+		output: pass or fail
+		side effect: 
+			insert to table_tag
+			insert to table_entry_tag
+			insert to table_content
+			insert to table_entry
+**********************************************************
+	View:
+	ViewAllSections.pl
+		input: database
+		output: all active sections in the db
+		side effect: none
+	ViewSectionEntries.pl
+		input: sectionid
+		output: all active entries in section
+	ViewTagEntries.pl
+		input: tag
+		output: all active entries with tag	
+	ViewEntry.pl
+		input: entryid
+		output: entry info
+	ViewUsers.pl
+		input: none
+		output: all active users
+	ViewUser.pl
+		input: userid
+		output: user info
+Web UI
+	Initial View
+		Create css, layout
+		Create html footer, header

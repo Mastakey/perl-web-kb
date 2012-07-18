@@ -1,0 +1,137 @@
+~~~~~~
+Phase1
+------
+
+1. Technology
+-------------
+language: Perl
+engine: Apache or IIS embedded with Perl
+storage: DB (sqlite3)
+I/O: web page (html/css)
+
+
+2. Overview
+-----------
+The knowledge base will be a web interface for viewing multiple knowledgebase databases (kb).
+It will have administrative features to add/edit/delete entries to the kb
+
+
+3. Database Design
+------------------
+Data Tables: 
+table_user
+	id, name, username, email, phone etc.., active
+table_section
+	id, name, parent_id, active
+table_tag
+	id, name, active
+table_content
+	id, content_blob
+table_entry
+	id, name, contentid, userid, createdate, lastdate, section, active
+
+Relational Tables:
+table_entry_tag:
+	id, entry_id, tag_id, active	
+
+active is a flag (0 or 1) that determines if the current element is active or not
+
+4. UI Design
+------------
+Initial View: 
+	view will be a selection of the kb database to view
+	Each database must be configured with the Database Design to be viewed properly
+Main/Section View:
+	on the left, there will be a clickable menu with section hierarchy
+	on the right, will contain all entries for that section
+			*add entry
+			title, author, lastdate, *edit, *remove <-- title will be clickable, 			
+Entry View:
+	on the left, there will be a clickable menu with section hierarchy <-- Section selected will be highlighted
+	on the right, 
+			*edit *delete
+			$title
+			Author: $author Last modified: $lastdate
+			$content
+			Tags: $tags <-- clickable
+Entry Edit View:
+	on the left, there will be a clickable menu with section hierarchy <-- Section selected will be highlighted
+	on the right, 
+			Title: ~$title
+			Author: ~$author
+			Content: ~$content
+			Section: ~$section
+			Tags: ~$tags
+			*Ok *Cancel
+Entry Add View:
+	on the left, there will be a clickable menu with section hierarchy <-- Section selected will be highlighted
+	on the right, 
+			Title: ~
+			Author: ~
+			Content: ~
+			Section: ~
+			Tags: ~
+			*Ok *Cancel		
+Tag View:
+	on the left, there will be a clickable menu with section hierarchy
+	on the right, will contain all entries for that tag
+			title, author, lastdate, *edit, *remove <-- title will be clickable
+
+Admin View:
+	Should be a new window
+	tags
+	sections
+Admin tag view:
+	*add
+	list of all tags with *edit, *delete
+		add: 
+			name: ~
+			*Ok *Cancel
+		edit:
+			name: ~$name
+			*Ok *Cancel
+		
+Admin section view:
+	*add
+	list of all sections with *edit, *delete
+		add: 
+			name: ~
+			*Ok *Cancel
+		edit:
+			name: ~$name
+			*Ok *Cancel
+
+* = button
+~ = input
+
+Functional Pieces
+-----------------
+Add/Edit/Delete/View entry
+Add/Edit/Delete/View section
+Add/Edit/Delete/View user
+
+Logical Pieces
+--------------
+Only show active i.e. active sections, active tags, active entries
+On delete, set active flag to 0
+On add, check to see if same name exists that has flag of 0
+section hierarchy should be limited to 3 levels i.e. grandparent, parent, child
+
+~~~~~~
+Phase2
+------
+Content Editor
+	Add Pictures, Video, Audio etc inside content
+Add Security 
+	Registry
+	Login
+	Https
+Emails
+	when?
+Database administrator
+	Create database
+	View all tables
+	Edit table
+	etc
+Connection pooling?
+

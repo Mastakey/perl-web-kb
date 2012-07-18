@@ -1,0 +1,7 @@
+[% INCLUDE header.tmpl
+	title = 'DB Test'
+%]
+[% FOREACH value IN DBVALUES %]
+[% value.ID %]-[% value.NAME %]
+[% END %]
+[% INCLUDE footer.tmpl %]

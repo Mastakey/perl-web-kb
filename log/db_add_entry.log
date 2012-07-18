@@ -1,0 +1,177 @@
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:31:22 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:31:22 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:32:41 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:32:41 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:33:43 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:33:43 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:34:38 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:34:38 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:35:06 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE name='Database' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE name='Sqlite' AND active=1 
+	
+
+		INSERT INTO table_tag (name, active) VALUES ('Sqlite', 1)
+	
+Returned id: 5
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:35:06 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:41:14 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:41:14 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:42:01 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_tag (name, active) VALUES ('WEBDB', 1)
+	
+Returned id: 6
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul  5 22:42:01 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 00:21:20 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 00:55:52 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES ('?');
+	
+Returned id: 2
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 00:55:52 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 00:58:25 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Couldn't execute statement: 
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:03:10 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Couldn't execute statement: 
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:03:19 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Returned id: 3
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:03:20 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:08:45 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Clob:
+
+	This is a test entry.
+	Oolong Cha - Pure Brown <p> Blah </p>
+
+Returned id: 4
+
+		INSERT INTO table_entry (name, content_id, user_id, createdate, lastdate, section_id, active) VALUES ('Database Entry', 4, 1, datetime('now'), datetime('now'), 1, 1)
+	
+Returned id: 2
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:08:46 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:12:47 2012
+SELECT id FROM table_user WHERE username='mastakey' AND active=1
+
+		SELECT id FROM table_tag WHERE upper(name)='DATABASE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='SQLITE' AND active=1 
+	
+
+		SELECT id FROM table_tag WHERE upper(name)='WEBDB' AND active=1 
+	
+
+		INSERT INTO table_content (content_blob) VALUES (?);
+	
+Clob:
+
+	This is a test entry.
+	Oolong Cha - Pure Brown <p> Blah </p>
+
+Returned id: 5
+
+		INSERT INTO table_entry (name, content_id, user_id, createdate, lastdate, section_id, active) VALUES ('Database Entry', 5, 1, datetime('now'), datetime('now'), 1, 1)
+	
+Returned id: 3
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Fri Jul  6 01:12:47 2012

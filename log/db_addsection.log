@@ -1,0 +1,114 @@
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 03:42:02 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('Perl', NULL, 1);
+
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 03:42:02 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 03:43:39 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('Perl', NULL, 1);
+
+Returned id: 4
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 03:43:39 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 05:29:51 2012
+
+	INSERT INTO table_user (name, username, email, active) VALUES ('Natalie Hong', '', '', 1);
+
+Returned id: 2
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  1 05:29:51 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:06:47 2012
+
+	SELECT (id, name, parent_id, active)  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:08:21 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:08:21 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:08:45 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:09:01 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:09:01 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:21:18 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:22:05 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
+	
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:22:05 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:28:34 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:28:48 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
+	
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:28:48 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:31:30 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
+	
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:31:30 2012
+Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:32:04 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
+	
+Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Sun Jul  8 01:32:04 2012

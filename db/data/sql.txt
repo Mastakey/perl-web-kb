@@ -1,0 +1,14 @@
+CREATE TABLE table_user 
+(
+id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+name TEXT NOT NULL,
+username TEXT,
+email TEXT
+);
+CREATE TABLE table_section
+(
+id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+name TEXT NOT NULL,
+parent_id INTEGER,
+FOREIGN KEY(parent_id) REFERENCES table_section(id)
+);
