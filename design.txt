@@ -20,7 +20,7 @@ It will have administrative features to add/edit/delete entries to the kb
 ------------------
 Data Tables: 
 table_user
-	id, name, username, email, phone etc.., active
+	id, name, username, email, active
 table_section
 	id, name, parent_id, active
 table_tag

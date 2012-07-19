@@ -35,7 +35,7 @@ Functional and Logical pieces
 			insert to table_entry_tag
 			insert to table_content
 			insert to table_entry
-**********************************************************
+
 	View:
 	ViewAllSections.pl
 		input: database
@@ -56,6 +56,18 @@ Functional and Logical pieces
 	ViewUser.pl
 		input: userid
 		output: user info
+**********************************************************
+	Edit:
+	EditSection.pl
+	EditEntry.pl
+	EditUser.pl
+	EditTag.pl
+	Delete (flag as inactive):
+	DeleteSection.pl
+	DeleteEntry.pl
+	DeleteUser.pl
+	DeleteTag.pl
+	
 Web UI
 	Initial View
 		Create css, layout

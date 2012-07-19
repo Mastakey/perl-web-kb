@@ -65,6 +65,87 @@ sub getTagId
 	return $id;
 }
 
+sub getSectionEntries
+{
+	my $self = shift;
+	my $db = shift;
+	my $sectionId = shift;
+	my $query = qq~
+		SELECT id, name, user_id, createdate, lastdate FROM table_entry WHERE section_id=$sectionId AND active=1 
+	~;
+	return $db->executeSQLHash($query);
+}
+
+sub getTagEntries
+{
+	my $self = shift;
+	my $db = shift;
+	my $tagId = shift;
+	my $query = qq~
+		SELECT entry.id, entry.name, user.name, entry.createdate, entry.lastdate 
+		FROM table_entry entry, table_user user, table_entry_tag entry_tag, table_tag tag 
+		WHERE 
+		entry.user_id = user.id 
+		AND
+		entry.id = entry_tag.entry_id
+		AND
+		entry_tag.tag_id = tag.id
+		AND
+		tag.id = $tagId
+	~;
+	return $db->executeSQLHash($query);
+}
+
+sub getEntry
+{
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $query = qq~
+		SELECT 
+		entry.id,
+		entry.name, 
+		content.content_blob,
+		user.name,
+		entry.createdate,
+		entry.lastdate,
+		section.name,
+		entry.active	
+		FROM 
+		table_entry entry,
+		table_content content,
+		table_section section,
+		table_user user
+		WHERE
+		entry.content_id = content.id and
+		entry.user_id = user.id and
+		entry.section_id = section.id and
+		entry.id = $entryId
+	~;
+	return $db->executeSQLHash($query);
+}
+
+sub getUsers
+{
+	my $self = shift;
+	my $db = shift;
+	my $query = qq~
+		SELECT id, name, username, email, active FROM table_user
+	~;
+	return $db->executeSQLHash($query);
+}
+
+sub getUser
+{
+	my $self = shift;
+	my $db = shift;
+	my $userId = shift;
+	my $query = qq~
+		SELECT id, name, username, email, active FROM table_user WHERE id = $userId
+	~;
+	return $db->executeSQLHash($query);
+}
+
 #Writes
 sub insertTag
 {

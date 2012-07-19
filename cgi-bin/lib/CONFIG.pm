@@ -4,6 +4,10 @@ use strict;
 
 #test();
 
+#cache this on server if possible
+our $cfg_db = "";
+our $cfg_rootdir = "";
+
 sub new
 {
     my $class = shift;
