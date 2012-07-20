@@ -17,7 +17,7 @@ sub new
     return $self;
 }
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Gernal Functions
+#General Functions
 
 #tags
 sub parseTags
@@ -63,6 +63,38 @@ sub getTagId
 	my $array = $db->executeSQLHash($query);
 	$id = $array->[0]->{id};
 	return $id;
+}
+
+sub getAllSections
+{
+#RECURSIVELY Find Children
+	my $self = shift;
+	my $db = shift;
+	my $parentId = shift;
+	my $codeRef = shift;
+	
+	my @sections = ();
+	
+	my $whereClause = "parent_id=$parentId";
+	if ($parentId == 0 || (!(defined($parentId))))
+	{
+		$whereClause = "parent_id is NULL";
+	}
+
+	#GET children
+	my $select_query_children = qq~
+		SELECT id, name, parent_id, active  FROM table_section WHERE $whereClause AND active=1
+	~;
+	my $sectionArray = $db->executeSQLHash($select_query_children);
+	foreach my $section (@$sectionArray)
+	{
+		#Do something
+		$codeRef->($section);	
+		my $sub_sections = $self->getAllSections($db, $section->{id}, $codeRef);
+		$section->{children} = $sub_sections;
+		push(@sections, $section);
+	}
+	return \@sections;
 }
 
 sub getSectionEntries

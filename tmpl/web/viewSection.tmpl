@@ -1,0 +1,23 @@
+[% INCLUDE header.tmpl
+	title = 'KB Sections'
+%]
+[%- VIEW nested_list -%]
+  [%- BLOCK list %]
+  <table border=0>
+      [% FOREACH i IN item -%]
+	  <tr>
+        <td>
+		[%- IF i.parent_id -%] >> [%- END -%]
+		[% i.name %]
+        [%- IF i.children -%]
+          [%- view.print(i.children.list) -%]
+        [%- END -%]
+		</td>
+	   </tr>
+      [%- END -%]
+	 </table>
+  [%- END -%]
+[%- END -%]
+
+[%- nested_list.print(sections) %]
+[% INCLUDE footer.tmpl %]

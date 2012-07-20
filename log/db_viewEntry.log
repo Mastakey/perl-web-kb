@@ -1,0 +1,105 @@
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:35:27 2012
+
+		SELECT 
+		entry.id,
+		entry.name, 
+		content.content_blob,
+		user.name,
+		entry.createdate,
+		entry.lastdate,
+		section.name,
+		entry.active	
+		FROM 
+		table_entry entry,
+		table_content content,
+		table_section section,
+		table_user user
+		WHERE
+		entry.content_id = content.id and
+		entry.user_id = user.id and
+		entry.section_id = section.id and
+		entry.id = 1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:35:27 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:46:26 2012
+
+		SELECT 
+		entry.id,
+		entry.name, 
+		content.content_blob,
+		user.name,
+		entry.createdate,
+		entry.lastdate,
+		section.name,
+		entry.active	
+		FROM 
+		table_entry entry,
+		table_content content,
+		table_section section,
+		table_user user
+		WHERE
+		entry.content_id = content.id and
+		entry.user_id = user.id and
+		entry.section_id = section.id and
+		entry.id = 1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:46:26 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:48:35 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1;
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:48:35 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:49:36 2012
+
+		SELECT id, name, user_id, createdate, lastdate FROM table_entry WHERE section_id=1 AND active=1 
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:49:36 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:49:49 2012
+
+		SELECT entry.id, entry.name, user.name, entry.createdate, entry.lastdate 
+		FROM table_entry entry, table_user user, table_entry_tag entry_tag, table_tag tag 
+		WHERE 
+		entry.user_id = user.id 
+		AND
+		entry.id = entry_tag.entry_id
+		AND
+		entry_tag.tag_id = tag.id
+		AND
+		tag.id = 1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:49:49 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 13:57:01 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 14:33:32 2012
+
+	SELECT id, name, parent_id, active  FROM table_section WHERE parent_id IS NULL AND active=1;
+
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 14:34:43 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1;
+	
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:07:31 2012
+
+		SELECT id, name, username, email, active FROM table_user
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:07:31 2012

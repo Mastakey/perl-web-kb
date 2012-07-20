@@ -1,18 +1,33 @@
 use strict;
 use warnings;
 
+#PREPROCESS LIB DIRECTORY
+use vars qw/$libDir/;
+use vars qw/$configDir/;
+
+BEGIN { 
+open my $fh, "<PREPROCESS.txt" or die "Can not open PREPROCESS.txt\n";
+my @lines = <$fh>;
+$libDir = $lines[0];
+$configDir = $lines[1];
+$libDir =~ s/\n//; #REMOVE new line
+$configDir =~ s/\n//;
+}
+
 use FindBin;
-use lib "$FindBin::Bin/../lib";
+use Data::Dumper;
+use lib $libDir;
 use WEBDB;
-use DBCFG;
 use CONFIG;
+use UTIL;
 
 #CONFIG SUTFF
-my $cfg = new CONFIG();
-my $dbcfg = new DBCFG($cfg->{ROOTDIR}.'/config/db.cfg');
-$dbcfg->getConfig();
-my $db_con = $dbcfg->getConnection("KB");
-my $db = new WEBDB($db_con->{DRIVER}.$db_con->{TNS}, "", "", $cfg->{ROOTDIR}.'log/db_addsection.log');
+my $cfg = new CONFIG($configDir);
+my $logDir = $cfg->{CONFIG}->{logDir};
+my $db_odbc = $cfg->{CONFIG}->{db_odbc};
+
+my $db = new WEBDB($db_odbc, "", "", $logDir.'/db_viewEntry.log');
+my $util = new UTIL();
 
 #FUNCTIONAL STUFF
 #QUERY

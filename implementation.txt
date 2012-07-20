@@ -72,3 +72,19 @@ Web UI
 	Initial View
 		Create css, layout
 		Create html footer, header
+		
+		
+CONFIG
+------
+YAML config file with 
+lib: ROOT/cgi-bin/lib
+config: ROOT/config
+log: ROOT/log
+html: ROOT/html
+tmpl: ROOT/tmpl
+tmpl_includes: ROOT/tmpl/includes
+odbc: dbi:SQLite:,KB,dbname=ROOT/db/data/kb_1.db,,
+
+Static Pages (for automation):
+------------------------------
+viewSection.html => update on AddSection/EditSection/DeleteSection

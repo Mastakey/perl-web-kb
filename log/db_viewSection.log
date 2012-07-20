@@ -1,0 +1,634 @@
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 14:37:01 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 14:38:57 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 14:38:57 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:09:09 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:09:09 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:14:35 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:14:35 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:15:10 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:15:10 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:15:59 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:15:59 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:16:17 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:16:17 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:19:06 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:19:06 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:21:59 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:21:59 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:23:14 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:23:14 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:24:29 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:24:29 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:27:37 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:27:37 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:27:46 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:27:46 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:28:33 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:28:33 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:30:09 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:30:09 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:30:45 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:30:45 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:31:38 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:31:38 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:31:47 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:31:47 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:06 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:06 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:38 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:38 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:52 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:32:52 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:34:00 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:34:00 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:36:56 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:36:56 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:37:07 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:37:07 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:47:25 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:47:25 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:47:49 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:47:49 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:50:56 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 15:50:56 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:09:31 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:09:31 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:13:42 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:13:42 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:22:39 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:22:39 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:05 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:05 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:23 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:23 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:39 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:23:39 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:06 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:06 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:27 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:27 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:41 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:41 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:51 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:24:51 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:25:03 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:25:03 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:25:32 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:25:32 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:27:08 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:27:09 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:27:45 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:27:45 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:29:14 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:29:14 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:30:38 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:30:38 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:31:48 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:31:48 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:33:02 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:33:02 2012
+Connected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:39:00 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db: at Thu Jul 19 16:39:00 2012

@@ -1,19 +1,32 @@
 use strict;
 use warnings;
 
+#PREPROCESS LIB DIRECTORY
+use vars qw/$libDir/;
+use vars qw/$configDir/;
+
+BEGIN { 
+open my $fh, "<PREPROCESS.txt" or die "Can not open PREPROCESS.txt\n";
+my @lines = <$fh>;
+$libDir = $lines[0];
+$configDir = $lines[1];
+$libDir =~ s/\n//; #REMOVE new line
+$configDir =~ s/\n//;
+}
+
 use FindBin;
 use Data::Dumper;
-use lib "$FindBin::Bin/../lib";
+use lib $libDir;
 use WEBDB;
-use DBCFG;
 use CONFIG;
+use UTIL;
 
 #CONFIG SUTFF
-my $cfg = new CONFIG();
-my $dbcfg = new DBCFG($cfg->{ROOTDIR}.'/config/db.cfg');
-$dbcfg->getConfig();
-my $db_con = $dbcfg->getConnection("KB");
-my $db = new WEBDB($db_con->{DRIVER}.$db_con->{TNS}, "", "", $cfg->{ROOTDIR}.'log/db_addsection.log');
+my $cfg = new CONFIG($configDir);
+my $logDir = $cfg->{CONFIG}->{logDir};
+my $db_odbc = $cfg->{CONFIG}->{db_odbc};
+my $db = new WEBDB($db_odbc, "", "", $logDir.'/db_viewSection.log');
+my $util = new UTIL();
 
 #FUNCTIONAL STUFF
 #QUERY
@@ -45,48 +58,14 @@ Microsoft
 #CONNECT TO DB
 $db->connect();
 #Query all roots
-my $sectionRootArray = $db->executeSQLHash($select_query_roots);
+#my $sectionRootArray = $db->executeSQLHash($select_query_roots);
 
 #Query all children
-	my $sections = getAllSections($db, undef, \&printSection);
+	my $sections = $util->getAllSections($db, undef, \&printSection);
 	print Dumper($sections);
 
 #DISCONNECT DB
 $db->disconnect();
-
-
-sub getAllSections
-{
-#RECURSIVELY Find Children
-	my $db = shift;
-	my $parentId = shift;
-	my $codeRef = shift;
-	
-	my @sections = ();
-	
-	my $whereClause = "parent_id=$parentId";
-	if ($parentId == 0 || (!(defined($parentId))))
-	{
-		$whereClause = "parent_id is NULL";
-	}
-	
-
-	
-	#GET children
-	my $select_query_children = qq~
-		SELECT id, name, parent_id, active  FROM table_section WHERE $whereClause AND active=1;
-	~;
-	my $sectionArray = $db->executeSQLHash($select_query_children);
-	foreach my $section (@$sectionArray)
-	{
-		#Do something
-		$codeRef->($section);	
-		my $sub_sections = getAllSections($db, $section->{id}, $codeRef);
-		$section->{children} = $sub_sections;
-		push(@sections, $section);
-	}
-	return \@sections;
-}
 
 sub printSection
 {
