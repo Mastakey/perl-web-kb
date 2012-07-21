@@ -54,3 +54,21 @@ Connected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul 19 00:37:38 201
 		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1;
 	
 Disconnected to dbi:SQLite:dbname=../../db/data/kb_1.db: at Thu Jul 19 00:37:38 2012
+Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:04:04 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('SectionName', NULL, 1);
+
+Returned id: 5
+Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:04:04 2012
+Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:04:47 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('SectionName', NULL, 1);
+
+Returned id: 6
+Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:04:47 2012
+Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:05:00 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('SectionName', NULL, 1);
+
+Returned id: 7
+Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:05:00 2012

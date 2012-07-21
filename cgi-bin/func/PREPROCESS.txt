@@ -1,2 +1,0 @@
-C:/Users/khan/Desktop/Experian/Scripts/web/kb/cgi-bin/lib
-C:/Users/khan/Desktop/Experian/Scripts/web/kb/config

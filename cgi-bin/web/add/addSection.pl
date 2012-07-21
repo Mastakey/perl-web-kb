@@ -8,33 +8,44 @@ use WEBDB;
 use CONFIG;
 use UTIL;
 
-#DYANMIC CONTENT {print HTML}:
-print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
+
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewSection.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_addSection.log');
 my $util = new UTIL();
 
+#INPUT
+my $name = "SectionName";
+my $parent_id = 0;
+
+if ($parent_id <= 0)
+{
+	$parent_id = "NULL";
+}
+
 #FUNCTIONAL STUFF
+#QUERY
+my $insert_query = qq~
+	INSERT INTO table_section (name, parent_id, active) VALUES ('$name', $parent_id, 1);
+~;
 
 #CONNECT TO DB
 $db->connect();
-
-#INPUT
-my $sectionId = 1;
-#my $sectionId = param("sectionId");
-
-#GET Entry
-my $section = $util->getSection($db, $sectionId);
-
-#BREADCRUMBS
-#TODO
-
-#print Dumper($section);
-
+#INSERT TO DB
+my $id = $db->insertSQLGetLast($insert_query, "table_section", "id");
+#VALIDATE INSERT
+my $msg = "";
+if ($id > 0)
+{
+	$msg = "Successfully added Section with ID: $id";
+}
+else
+{
+	$msg = "Something went wrong: check the log for more details";
+}
 #DISCONNECT DB
 $db->disconnect();
 
@@ -45,10 +56,10 @@ my $tmplDir = $cfg->{CONFIG}->{tmplDir};
 my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 
-    my $tmpl_file = 'viewSection.tmpl';
-	my $output_file = 'viewSection.html';
+    my $tmpl_file = 'addSection.tmpl';
+	my $output_file = 'addSection.html';
     my $vars = {
-       section  => $section->[0],
+		msg => $msg,
 	   htmlcgi => $htmlcgi,
     };
 	

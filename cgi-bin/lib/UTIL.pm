@@ -97,6 +97,17 @@ sub getAllSections
 	return \@sections;
 }
 
+sub getSection
+{
+	my $self = shift;
+	my $db = shift;
+	my $sectionId = shift;
+	my $query = qq~
+		SELECT id, name, parent_id, active FROM table_section where id =$sectionId
+	~;
+	return $db->executeSQLHash($query);
+}
+
 sub getSectionEntries
 {
 	my $self = shift;

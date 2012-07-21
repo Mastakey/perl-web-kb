@@ -1,8 +1,9 @@
-configDir: C:/Users/khan/Desktop/Experian/Scripts/web/kb/config
-htmlDir: C:/Users/khan/Desktop/Experian/Scripts/web/kb/html
-libDir: C:/Users/khan/Desktop/Experian/Scripts/web/kb/cgi-bin/lib
-logDir: C:/Users/khan/Desktop/Experian/Scripts/web/kb/log
-tmplDir: C:/Users/khan/Desktop/Experian/Scripts/web/kb/tmpl
-db_odbc: 'dbi:SQLite:dbname=C:/Users/khan/Desktop/Experian/Scripts/web/kb/db/data/kb_1.db'
+configDir: config
+htmlDir: html
+libDir: cgi-bin/lib
+logDir: log
+tmplDir: tmpl
+dbDir: db/data
+db_odbc: 'dbi:SQLite:dbname=kb_1.db'
 db_user:
 db_pass:

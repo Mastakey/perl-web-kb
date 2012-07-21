@@ -1,23 +1,27 @@
 [% INCLUDE header.tmpl
-	title = 'KB Sections'
+	title = 'KB Web Administrator'
+	cssdir = '../css'
 %]
-[%- VIEW nested_list -%]
-  [%- BLOCK list %]
-  <table border=0>
-      [% FOREACH i IN item -%]
-	  <tr>
-        <td>
-		[%- IF i.parent_id -%] >> [%- END -%]
-		[% i.name %]
-        [%- IF i.children -%]
-          [%- view.print(i.children.list) -%]
-        [%- END -%]
-		</td>
-	   </tr>
-      [%- END -%]
-	 </table>
-  [%- END -%]
-[%- END -%]
-
-[%- nested_list.print(sections) %]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Sections
+		<div id="content_section">
+			<h2>[% section.name %]</h2>
+			<table border=1>
+				<tr><td>Id:</td><td>[% section.id %]</td></tr>
+				<tr><td>Name:</td><td>[% section.name %]</td></tr>
+				<tr><td>Parent:</td><td>[% section.parent_id %]</td></tr>
+				<tr><td>Active:</td><td>[% section.active %]</td></tr>
+				</tr>
+			</table>
+		</div>
+		<div id="action_section">
+			<form>
+				Actions:
+				<table border=1><tr><td>Add Sub Section</td><td>Edit</td><td>Delete</td></tr></table>
+			</form>
+		</div>
+	</div>
 [% INCLUDE footer.tmpl %]

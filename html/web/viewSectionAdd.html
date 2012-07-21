@@ -27,21 +27,16 @@
 		</ul>
 	</div>
 	<div id="main_section">
-	Home > Sections
+	Home > Sections > Add
 		<div id="content_section">
-			<h2>Database</h2>
-			<table border=1>
-				<tr><td>Id:</td><td>1</td></tr>
-				<tr><td>Name:</td><td>Database</td></tr>
-				<tr><td>Parent:</td><td></td></tr>
-				<tr><td>Active:</td><td>1</td></tr>
-				</tr>
+			<h2>Add Section</h2>
+			<form action='../cgi-bin/' method=post>
+			
+			<table>
+				<tr><td>Parent Id:</td><td><input type=text id='parent_id' name='parent_id' value='0' disabled /></td></tr>
+				<tr><td>Name:</td><td><input type=text name='section_name' id='section_name' /></td></tr>
+				<tr><td><input type=submit value=Submit /></td></tr>
 			</table>
-		</div>
-		<div id="action_section">
-			<form>
-				Actions:
-				<table border=1><tr><td>Add Sub Section</td><td>Edit</td><td>Delete</td></tr></table>
 			</form>
 		</div>
 	</div>

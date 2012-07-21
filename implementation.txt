@@ -85,6 +85,76 @@ tmpl: ROOT/tmpl
 tmpl_includes: ROOT/tmpl/includes
 odbc: dbi:SQLite:,KB,dbname=ROOT/db/data/kb_1.db,,
 
+Directory Structural differences:
+Setting 1:
+ROOT
+	cgi-bin
+		kb
+			lib
+			web
+				view
+				admin
+			func
+			config.yml <-- must be the same directory as lib folder
+	kb
+		html
+		tmpl
+		config
+config.yml:
+		root: ../../../
+		configDir: kb/config
+		cgiDir: cgi-bin/kb
+		htmlDir: kb/html
+		libDir: cgi-bin/kb/lib
+		logDir: kb/log
+		tmplDir: kb/tmpl
+		dbDir: kb/db/data
+		db_odbc_driver: 'dbi:SQLite:'
+		db_odbc_dbname: kb_1.db
+		db_odbc_user:
+		db_odbc_pass:
+		htmlcgi: ../../cgi-bin/kb
+		
+Setting 2:
+ROOT
+	kb
+		cgi-bin
+			lib
+			web
+				view
+				admin
+			func
+			config.yml <-- must be the same directory as lib folder
+		html
+		tmpl
+		config
+	config.yml:
+		root: ../../../
+		configDir: kb/config
+		cgiDir: kb/cgi-bin
+		htmlDir: kb/html
+		libDir: kb/cgi-bin/lib
+		logDir: kb/log
+		tmplDir: kb/tmpl
+		dbDir: kb/db/data
+		db_odbc_driver: 'dbi:SQLite:'
+		db_odbc_dbname: kb_1.db
+		db_odbc_user:
+		db_odbc_pass:
+		htmlcgi: ../cgi-bin
+
+		
+Assumptions:
+	Assume lib directory will not change from where web/func are located.
+	i.e. use lib "$FindBin::Bin/../../lib"; for scrips in web/view directory
+	config.yml must be in the same folder as the lib directory
+	This is used in CONFIG.pm, it assumes that config.yml can be found one directory above the current directory
+	
+
 Static Pages (for automation):
 ------------------------------
-viewSection.html => update on AddSection/EditSection/DeleteSection
+viewSections.pl => viewSections.html => update on AddSection/EditSection/DeleteSection
+
+Dynamic Pages:
+--------------
+viewSection.pl?sectionId=$sectionId

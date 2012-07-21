@@ -8,35 +8,13 @@ use WEBDB;
 use CONFIG;
 use UTIL;
 
-#DYANMIC CONTENT {print HTML}:
-print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
 my $cfg = new CONFIG('../');
-my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewSection.log');
-my $util = new UTIL();
-
-#FUNCTIONAL STUFF
-
-#CONNECT TO DB
-$db->connect();
 
 #INPUT
-my $sectionId = 1;
-#my $sectionId = param("sectionId");
-
-#GET Entry
-my $section = $util->getSection($db, $sectionId);
-
-#BREADCRUMBS
-#TODO
-
-#print Dumper($section);
-
-#DISCONNECT DB
-$db->disconnect();
+my $parent_id = 0;
 
 #TEMPLATE STUFF
 use Template;
@@ -45,10 +23,10 @@ my $tmplDir = $cfg->{CONFIG}->{tmplDir};
 my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 
-    my $tmpl_file = 'viewSection.tmpl';
-	my $output_file = 'viewSection.html';
+    my $tmpl_file = 'viewSectionAdd.tmpl';
+	my $output_file = 'viewSectionAdd.html';
     my $vars = {
-       section  => $section->[0],
+       parent_id => $parent_id,
 	   htmlcgi => $htmlcgi,
     };
 	

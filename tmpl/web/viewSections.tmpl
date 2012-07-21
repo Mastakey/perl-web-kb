@@ -1,0 +1,36 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+	cssdir = '../css'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Sections
+		<div id="content_section">
+			<h2>Sections</h2>
+			[%- VIEW nested_list -%]
+			  [%- BLOCK list %]
+			  <table border=0>
+				  [% FOREACH i IN item -%]
+				  <tr>
+					<td>
+					[%- IF i.parent_id -%] >> [%- END -%]
+					<a href='[% htmlcgi %]/viewSection.pl?sectionId=[% i.id %]'>[% i.name %]</a>
+					[%- IF i.children -%]
+					  [%- view.print(i.children.list) -%]
+					[%- END -%]
+					</td>
+				   </tr>
+				  [%- END -%]
+				 </table>
+			  [%- END -%]
+			[%- END -%]
+			[%- nested_list.print(sections) %]
+		</div>
+		<div id="action_section">
+				Actions:
+				<table border=0><tr><td><input type=button value='Add' onClick='window.open("[% htmlcgi %]/web/view/viewSectionAdd.pl?parentId=0")' /></td></tr></table>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]
