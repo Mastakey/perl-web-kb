@@ -1,0 +1,32 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Tags > [% tag.name %]
+		<div id="content_section">
+			<h2>[% tag.name %]</h2>
+			<form action='[% htmlcgi %]/admin/edit/editTag.pl' method='POST'>
+			<table border=1>
+				<tr><td>Id:</td><td><input type='text' id='tag_id' name='tag_id' value=[% tag.id %] readonly="readonly" /></td></tr>
+				<tr><td>Name:</td><td><input type='text' id='tag_name' name='tag_name' value='[% tag.name %]' /></td></tr>
+				<tr><td>Active:</td><td>[% tag.active %]</td></tr>
+				<tr><td></td><td><input type='submit' value='Change' /></td></tr>
+				</tr>
+			</table>
+			</form>
+		</div>
+		<div id="action_section">
+			<form>
+				Actions:
+				<table border=1><tr>
+				<td>
+					<input type=button value='Delete' onClick=self.location='[% htmlcgi %]/admin/delete/deleteTag.pl?tag_id=[% tag.id %]' />
+				</td>
+				</tr></table>
+			</form>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]

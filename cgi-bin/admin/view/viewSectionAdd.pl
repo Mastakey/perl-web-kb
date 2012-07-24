@@ -9,6 +9,8 @@ use lib "$FindBin::Bin/../../lib";
 use WEBDB;
 use CONFIG;
 use UTIL;
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 
 #WEB INIT
 print "Content-type: text/html\n\n";
@@ -18,7 +20,7 @@ my $cfg = new CONFIG('../');
 my $configDir = $cfg->{CONFIG}->{configDir};
 
 #INPUT
-my $parent_id = 0;
+my $parent_id = param("parent_id");
 
 #TEMPLATE STUFF
 use Template;
@@ -41,8 +43,8 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/web;'.$tmplDir.'/includes',
-			OUTPUT_PATH => $htmlDir.'/web',
+			INCLUDE_PATH => $tmplDir.'/admin/view;'.$tmplDir.'/includes',
+			OUTPUT_PATH => $htmlDir.'/admin/view',
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);

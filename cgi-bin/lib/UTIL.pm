@@ -65,6 +65,27 @@ sub getTagId
 	return $id;
 }
 
+sub getAllTags
+{
+	my $self = shift;
+	my $db = shift;
+	my $query = qq~
+		SELECT id, name, active FROM table_tag WHERE active=1
+	~;
+	return $db->executeSQLHash($query);
+}
+
+sub getTag
+{
+	my $self = shift;
+	my $db = shift;
+	my $id = shift;
+	my $query = qq~
+		SELECT id, name, active FROM table_tag WHERE id=$id
+	~;
+	return $db->executeSQLHash($query);
+}
+
 sub getAllSections
 {
 #RECURSIVELY Find Children
@@ -173,7 +194,7 @@ sub getUsers
 	my $self = shift;
 	my $db = shift;
 	my $query = qq~
-		SELECT id, name, username, email, active FROM table_user
+		SELECT id, name, username, email, active FROM table_user WHERE active=1
 	~;
 	return $db->executeSQLHash($query);
 }

@@ -1,6 +1,5 @@
 [% INCLUDE header.tmpl
 	title = 'KB Web Administrator'
-	cssdir = '../css'
 %]
 [% INCLUDE left_section.tmpl
 	title = 'KB Web Administrator'
@@ -16,7 +15,7 @@
 				  <tr>
 					<td>
 					[%- IF i.parent_id -%] >> [%- END -%]
-					<a href='[% htmlcgi %]/viewSection.pl?sectionId=[% i.id %]'>[% i.name %]</a>
+					<a href='[% htmlcgi %]/admin/view/viewSection.pl?sectionId=[% i.id %]'>[% i.name %]</a>
 					[%- IF i.children -%]
 					  [%- view.print(i.children.list) -%]
 					[%- END -%]
@@ -30,7 +29,7 @@
 		</div>
 		<div id="action_section">
 				Actions:
-				<table border=0><tr><td><input type=button value='Add' onClick='window.open("[% htmlcgi %]/web/view/viewSectionAdd.pl?parentId=0")' /></td></tr></table>
+				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewSectionAdd.pl?parent_id=0' /></td></tr></table>
 		</div>
 	</div>
 [% INCLUDE footer.tmpl %]

@@ -168,3 +168,8 @@ viewSections.pl => viewSections.html => update on AddSection/EditSection/DeleteS
 Dynamic Pages:
 --------------
 viewSection.pl?sectionId=$sectionId
+
+TODO
+Hide parent id and show parent name in forms
+Show deleted sections
+Ability to hide/show Section tree

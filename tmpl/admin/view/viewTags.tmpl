@@ -1,0 +1,22 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Tags
+		<div id="content_section">
+			<h2>Tags</h2>
+			<table border=0>
+			[% FOREACH tag IN tags -%]
+				<tr><td><a href='[% htmlcgi %]/admin/view/viewTag.pl?tag_id=[% tag.id %]'>[% tag.name %]</a></td></tr>
+			[%- END -%]
+			</table>
+		</div>
+		<div id="action_section">
+				Actions:
+				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewTagAdd.pl' /></td></tr></table>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]

@@ -9,6 +9,8 @@ use lib "$FindBin::Bin/../../lib";
 use WEBDB;
 use CONFIG;
 use UTIL;
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 
 #WEB INIT
 print "Content-type: text/html\n\n";
@@ -75,13 +77,14 @@ use Template;
 my $tmplDir = $cfg->{CONFIG}->{tmplDir};
 my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
+my $cssDir = $cfg->{CONFIG}->{cssDir};
 
     my $tmpl_file = 'viewSections.tmpl';
 	my $output_file = 'viewSections.html';
     my $vars = {
        sections  => $sections,
 	   htmlcgi => $htmlcgi,
-	   cssdir => '../css',
+	   cssdir => $cssDir,
     };
 	
     my $template = Template->new( 
@@ -89,11 +92,11 @@ my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/web;'.$tmplDir.'/includes',
-			OUTPUT_PATH => $htmlDir.'/web',
+			INCLUDE_PATH => $tmplDir.'/admin/view;'.$tmplDir.'/includes',
+			OUTPUT_PATH => $htmlDir.'/admin/view',
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);
     
-print $template->process($tmpl_file, $vars, $output_file)
+print $template->process($tmpl_file, $vars)
         || die "Template process failed: ", $template->error(), "\n";

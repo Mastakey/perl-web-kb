@@ -1,0 +1,36 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Sections > [% section.name %]
+		<div id="content_section">
+			<h2>[% section.name %]</h2>
+			<form action='[% htmlcgi %]/admin/edit/editSection.pl' method='POST'>
+			<table border=1>
+				<tr><td>Id:</td><td><input type='text' id='section_id' name='section_id' value=[% section.id %] readonly="readonly" /></td></tr>
+				<tr><td>Name:</td><td><input type='text' id='section_name' name='section_name' value='[% section.name %]' /></td></tr>
+				<tr><td>Parent:</td><td>[% section.parent_id %]</td></tr>
+				<tr><td>Active:</td><td>[% section.active %]</td></tr>
+				<tr><td></td><td><input type='submit' value='Change' /></td></tr>
+				</tr>
+			</table>
+			</form>
+		</div>
+		<div id="action_section">
+			<form>
+				Actions:
+				<table border=1><tr>
+				<td>
+					<input type=button value='Add Sub' onClick=self.location='[% htmlcgi %]/admin/view/viewSectionAdd.pl?parent_id=[% section.id %]' />
+				</td>
+				<td>
+					<input type=button value='Delete' onClick=self.location='[% htmlcgi %]/admin/delete/deleteSection.pl?section_id=[% section.id %]' />
+				</td>
+				</tr></table>
+			</form>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]

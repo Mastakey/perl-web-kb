@@ -8,9 +8,9 @@
 	Home > Sections > Add
 		<div id="content_section">
 			<h2>Add Section</h2>
-			<form action='../add/addSection.pl' method=post>			
+			<form action='[% htmlcgi %]/admin/add/addSection.pl' method=post>			
 			<table>
-				<tr><td>Parent Id:</td><td><input type=text id='parent_id' name='parent_id' value='[% parent_id %]' disabled /></td></tr>
+				<tr><td>Parent Id:</td><td><input type=text id='parent_id' name='parent_id' value='[% parent_id %]' readonly="readonly" /></td></tr>
 				<tr><td>Name:</td><td><input type=text name='section_name' id='section_name' /></td></tr>
 				<tr><td><input type=submit value=Submit /></td></tr>
 			</table>
