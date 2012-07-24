@@ -72,3 +72,9 @@ Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:
 
 Returned id: 7
 Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:05:00 2012
+Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Mon Jul 23 16:32:09 2012
+
+	INSERT INTO table_section (name, parent_id, active) VALUES ('SectionName', NULL, 1);
+
+Returned id: 8
+Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Mon Jul 23 16:32:09 2012

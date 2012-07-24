@@ -73,6 +73,15 @@ Web UI
 		Create css, layout
 		Create html footer, header
 		
+	web - static:
+	viewSections.pl
+	viewSection.pl
+		use htmlcgi in tmpl files
+	
+	web - dynamic:
+	viewSectionAdd.pl
+	addSection.pl
+		use cssDir in tmpl files
 		
 CONFIG
 ------
@@ -114,6 +123,7 @@ config.yml:
 		db_odbc_user:
 		db_odbc_pass:
 		htmlcgi: ../../cgi-bin/kb
+		cssDir: kb/html/css
 		
 Setting 2:
 ROOT

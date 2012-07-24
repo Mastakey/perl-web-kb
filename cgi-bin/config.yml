@@ -11,3 +11,4 @@ db_odbc_dbname: kb_1.db
 db_odbc_user:
 db_odbc_pass:
 htmlcgi: ../cgi-bin
+cssDir: kb/html/css

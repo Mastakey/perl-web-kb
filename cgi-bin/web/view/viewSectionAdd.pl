@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 use strict;
 use warnings;
 
@@ -8,6 +10,8 @@ use WEBDB;
 use CONFIG;
 use UTIL;
 
+#WEB INIT
+print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
 my $cfg = new CONFIG('../');
@@ -22,12 +26,14 @@ use Template;
 my $tmplDir = $cfg->{CONFIG}->{tmplDir};
 my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
+my $cssDir = $cfg->{CONFIG}->{cssDir};
 
     my $tmpl_file = 'viewSectionAdd.tmpl';
-	my $output_file = 'viewSectionAdd.html';
+	#my $output_file = 'viewSectionAdd.html';
     my $vars = {
        parent_id => $parent_id,
 	   htmlcgi => $htmlcgi,
+	   cssdir => $cssDir, #used by header.tmpl
     };
 	
     my $template = Template->new( 
@@ -41,5 +47,5 @@ my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 		}
 	);
     
-    $template->process($tmpl_file, $vars, $output_file)
+print $template->process($tmpl_file, $vars)
         || die "Template process failed: ", $template->error(), "\n";

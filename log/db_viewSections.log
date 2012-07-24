@@ -273,3 +273,29 @@ Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:
 		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=7 AND active=1
 	
 Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 17:05:25 2012
+Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Mon Jul 23 17:16:16 2012
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id is NULL AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=1 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=2 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=3 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=5 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=6 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=7 AND active=1
+	
+
+		SELECT id, name, parent_id, active  FROM table_section WHERE parent_id=8 AND active=1
+	
+Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Mon Jul 23 17:16:16 2012

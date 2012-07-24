@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 use strict;
 use warnings;
 
@@ -8,6 +10,8 @@ use WEBDB;
 use CONFIG;
 use UTIL;
 
+#WEB INIT
+print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
 
@@ -77,6 +81,7 @@ my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
     my $vars = {
        sections  => $sections,
 	   htmlcgi => $htmlcgi,
+	   cssdir => '../css',
     };
 	
     my $template = Template->new( 
@@ -90,5 +95,5 @@ my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 		}
 	);
     
-    $template->process($tmpl_file, $vars, $output_file)
+print $template->process($tmpl_file, $vars, $output_file)
         || die "Template process failed: ", $template->error(), "\n";
