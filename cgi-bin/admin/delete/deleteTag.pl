@@ -16,8 +16,36 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
+
 my $cfg = new CONFIG('../');
+my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_deleteTag.log');
+my $util = new UTIL();
+
+#INPUT
+#my $name = "SectionName";
+my $tag_id = param("tag_id");
+
+#VALIDATION
+#TODO
+
+#FUNCTIONAL STUFF
+#QUERY
+my $update_query = qq~
+	UPDATE table_tag SET active=0 WHERE id=$tag_id
+~;
+
+#CONNECT TO DB
+$db->connect();
+#INSERT TO DB
+$db->updateSQL($update_query);
+#VALIDATE UPDATE
+#TODO
+my $msg = "TODO";
+
+#DISCONNECT DB
+$db->disconnect();
 
 #TEMPLATE STUFF
 use Template;
@@ -27,9 +55,10 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewTagAdd.tmpl';
-	#my $output_file = 'viewSectionAdd.html';
+    my $tmpl_file = 'deleteTag.tmpl';
+	#my $output_file = 'updateSection.html';
     my $vars = {
+		msg => $msg,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir, #used by header.tmpl
     };
@@ -39,11 +68,11 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/admin/view;'.$tmplDir.'/includes',
-			OUTPUT_PATH => $htmlDir.'/admin/view',
+			INCLUDE_PATH => $tmplDir.'/admin/delete;'.$tmplDir.'/includes',
+			OUTPUT_PATH => $htmlDir.'/admin/delete',
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);
     
-print $template->process($tmpl_file, $vars)
+    print $template->process($tmpl_file, $vars)
         || die "Template process failed: ", $template->error(), "\n";

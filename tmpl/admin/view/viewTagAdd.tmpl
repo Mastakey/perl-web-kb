@@ -1,0 +1,19 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Tags > Add
+		<div id="content_section">
+			<h2>Add Tag</h2>
+			<form action='[% htmlcgi %]/admin/add/addTag.pl' method=post>			
+			<table>
+				<tr><td>Name:</td><td><input type=text name='tag_name' id='tag_name' /></td></tr>
+				<tr><td><input type=submit value=Submit /></td></tr>
+			</table>
+			</form>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]
