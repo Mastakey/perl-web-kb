@@ -1,5 +1,6 @@
 package WEBDB;
 use DBI;
+use Cwd;
 
 use strict;
 use warnings;
@@ -43,6 +44,8 @@ sub new {
      pass => shift,
     };
 	$DEBUGFILE = shift;
+	my $currentDir = getcwd();
+	open(MYFILE, ">>".$DEBUGFILE) or die "Can not open log file $DEBUGFILE: $!\n Current dir: $currentDir";
     bless $self, $class;
     return $self;
 }

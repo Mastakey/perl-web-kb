@@ -1,5 +1,8 @@
 package CONFIG;
+
+use FindBin;
 use Data::Dumper;
+use Cwd;
 
 use strict;
 use YAML;
@@ -10,13 +13,18 @@ sub new
 {
     my $class = shift;
 	my $dirOffset = shift;
-	my $configFile = $dirOffset.'../config.yml';
-	open my $file_fh, "<".$configFile or die "Can not open config file\n";
+	my $configFile = $FindBin::Bin.'/'.$dirOffset.'../config.yml';
+	my $currentDir = getcwd();
+	open my $file_fh, "<".$configFile or die "Can not open config file $configFile: $!\n Current dir: $currentDir";
 
 	#convert YAML file to perl hash ref
 	my $config = YAML::LoadFile($file_fh);
 	
-	my $root = $dirOffset.$config->{root};
+	my $root = $config->{root};
+	if ( $root ne "" && defined($root) )
+	{
+		$root = $dirOffset.$root;
+	}
 	
 	#update config hash inplace with ROOT directory
 	foreach my $key (keys %$config)

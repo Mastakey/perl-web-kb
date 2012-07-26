@@ -17,7 +17,7 @@ sub new
     return $self;
 }
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#General Functions
+#General Functions #
 
 #tags
 sub parseTags
@@ -33,9 +33,21 @@ sub parseTags
 	}
 	return \@parsedTagArray;
 }
-
+#End General Functions #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#DB Functions
+#DB Functions #
+
+#Generic Reads
+sub getDeleted
+{
+	my $self = shift;
+	my $db = shift;
+	my $table = shift;
+	my $query = qq~
+		SELECT id, name FROM $table WHERE active=0
+	~;
+	return $db->executeSQLHash($query);
+}
 
 #Reads
 sub getUserId
@@ -48,6 +60,16 @@ sub getUserId
 	my $queryArray = $db->executeSQLHash("SELECT id FROM table_user WHERE username='".$username."' AND active=1");
 	$id = $queryArray->[0]->{id};
 	return $id;
+}
+
+sub getAllUsers
+{
+	my $self = shift;
+	my $db = shift;
+	my $query = qq~
+		SELECT id, name, username, email, active FROM table_user WHERE active=1
+	~;
+	return $db->executeSQLHash($query);
 }
 
 sub getTagId
@@ -211,6 +233,20 @@ sub getUser
 }
 
 #Writes
+sub restoreItem
+{
+	my $self = shift;
+	my $db = shift;
+	my $table = shift;
+	my $id = shift;
+
+	my $query = qq~
+		UPDATE $table SET active=1 WHERE id=$id
+	~;
+	$db->updateSQL($query);
+	return $id;
+}
+
 sub insertTag
 {
 	my $self = shift;
@@ -221,6 +257,50 @@ sub insertTag
 		INSERT INTO table_tag (name, active) VALUES ('$tag', 1)
 	~;
 	$id = $db->insertSQLGetLast($query, 'table_tag', 'id');
+	return $id;
+}
+
+sub insertUser
+{
+	my $self = shift;
+	my $db = shift;
+	my $name = shift;
+	my $username = shift;
+	my $email = shift;
+	my $id = 0;
+	my $query = qq~
+		INSERT INTO table_user (name, username, email, active) VALUES ('$name', '$username', '$email', 1)
+	~;
+	$id = $db->insertSQLGetLast($query, 'table_user', 'id');
+	return $id;
+}
+
+sub editUser
+{
+	my $self = shift;
+	my $db = shift;
+	my $id = shift;
+	my $name = shift;
+	my $username = shift;
+	my $email = shift;
+
+	my $query = qq~
+		UPDATE table_user SET name='$name', username='$username', email='$email' WHERE id=$id
+	~;
+	$db->updateSQL($query);
+	return $id;
+}
+
+sub deleteUser
+{
+	my $self = shift;
+	my $db = shift;
+	my $id = shift;
+
+	my $query = qq~
+		UPDATE table_user SET active=0 WHERE id=$id
+	~;
+	$db->updateSQL($query);
 	return $id;
 }
 
@@ -292,6 +372,7 @@ sub getAndCreateTags
 	return \@tagIds;
 }
 
+#END DB Functions #
 #=====================================================================
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

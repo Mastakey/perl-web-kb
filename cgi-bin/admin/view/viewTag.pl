@@ -20,7 +20,7 @@ print "Content-type: text/html\n\n";
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTag.log');
 my $util = new UTIL();
 
 #INPUT

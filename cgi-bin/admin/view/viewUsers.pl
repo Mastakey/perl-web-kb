@@ -11,30 +11,33 @@ use CONFIG;
 use UTIL;
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use Cwd;
 
 #WEB INIT
 print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
+my $currentDir = getcwd();
 
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewUsers.log');
 my $util = new UTIL();
 
 
 #FUNCTIONAL STUFF
 
+
 #CONNECT TO DB
 $db->connect();
-#Query
-	my $tags = $util->getAllTags($db);
-#GET deleted Tags
-	my $deletedTags = $util->getDeleted($db, "table_tag");
-
+#Query all users
+	my $users = $util->getAllUsers($db);
+#GET deleted users
+	my $deletedUsers = $util->getDeleted($db, "table_user");
 #DISCONNECT DB
 $db->disconnect();
+
 
 #TEMPLATE STUFF
 use Template;
@@ -44,11 +47,11 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewTags.tmpl';
-	my $output_file = 'viewTags.html';
+    my $tmpl_file = 'viewUsers.tmpl';
+	my $output_file = 'viewUsers.html';
     my $vars = {
-       tags => $tags,
-	   deletedTags => $deletedTags,
+       users  => $users,
+	   deletedUsers => $deletedUsers,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
     };
@@ -65,4 +68,4 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 	);
     
 print $template->process($tmpl_file, $vars)
-        || die "Template process failed: ", $template->error(), "\n";
+        || die "Template process failed: ", $template->error(), "\n Current dir: $currentDir";

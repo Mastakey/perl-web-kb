@@ -20,18 +20,21 @@ print "Content-type: text/html\n\n";
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewUser.log');
 my $util = new UTIL();
 
+#INPUT
+my $user_id = param("user_id");
+
+#VALIDATION
+#TODO
 
 #FUNCTIONAL STUFF
 
 #CONNECT TO DB
 $db->connect();
 #Query
-	my $tags = $util->getAllTags($db);
-#GET deleted Tags
-	my $deletedTags = $util->getDeleted($db, "table_tag");
+	my $user = $util->getUser($db, $user_id);
 
 #DISCONNECT DB
 $db->disconnect();
@@ -44,11 +47,10 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewTags.tmpl';
-	my $output_file = 'viewTags.html';
+    my $tmpl_file = 'viewUser.tmpl';
+	my $output_file = 'viewUser.html';
     my $vars = {
-       tags => $tags,
-	   deletedTags => $deletedTags,
+       user => $user->[0],
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
     };

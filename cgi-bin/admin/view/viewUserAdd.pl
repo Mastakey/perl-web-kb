@@ -16,25 +16,8 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
-
 my $cfg = new CONFIG('../');
-my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
-my $util = new UTIL();
-
-
-#FUNCTIONAL STUFF
-
-#CONNECT TO DB
-$db->connect();
-#Query
-	my $tags = $util->getAllTags($db);
-#GET deleted Tags
-	my $deletedTags = $util->getDeleted($db, "table_tag");
-
-#DISCONNECT DB
-$db->disconnect();
 
 #TEMPLATE STUFF
 use Template;
@@ -44,13 +27,11 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewTags.tmpl';
-	my $output_file = 'viewTags.html';
+    my $tmpl_file = 'viewUserAdd.tmpl';
+	#my $output_file = 'viewSectionAdd.html';
     my $vars = {
-       tags => $tags,
-	   deletedTags => $deletedTags,
 	   htmlcgi => $htmlcgi,
-	   cssdir => $cssDir,
+	   cssdir => $cssDir, #used by header.tmpl
     };
 	
     my $template = Template->new( 

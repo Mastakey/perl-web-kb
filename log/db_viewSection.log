@@ -928,3 +928,15 @@ Connected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 16:
 		SELECT id, name, parent_id, active FROM table_section where id =1
 	
 Disconnected to dbi:SQLite:dbname=../../../../kb/db/data/kb_1.db: at Fri Jul 20 16:06:14 2012
+Connected to dbi:SQLite:dbname=../../../../perl-web-kb/db/data/kb_1.db: at Wed Jul 25 12:09:38 2012
+
+		SELECT id, name, parent_id, active FROM table_section where id =
+	
+Connected to dbi:SQLite:dbname=../../../../perl-web-kb/db/data/kb_1.db: at Wed Jul 25 12:09:51 2012
+
+		SELECT id, name, parent_id, active FROM table_section where id =
+	
+Connected to dbi:SQLite:dbname=../../../../perl-web-kb/db/data/kb_1.db: at Wed Jul 25 12:11:01 2012
+
+		SELECT id, name, parent_id, active FROM table_section where id =
+	

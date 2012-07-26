@@ -1,14 +1,14 @@
 root: ../../../
-configDir: kb/config
-cgiDir: kb/cgi-bin
-htmlDir: kb/html
-libDir: kb/cgi-bin/lib
-logDir: kb/log
-tmplDir: kb/tmpl
-dbDir: kb/db/data
+configDir: perl-web-kb/config
+cgiDir: perl-web-kb/cgi-bin
+htmlDir: perl-web-kb/html
+libDir: perl-web-kb/cgi-bin/lib
+logDir: perl-web-kb/log
+tmplDir: perl-web-kb/tmpl
+dbDir: perl-web-kb/db/data
 db_odbc_driver: 'dbi:SQLite:'
 db_odbc_dbname: kb_1.db
 db_odbc_user:
 db_odbc_pass:
-htmlcgiDir: ../cgi-bin
-cssDir: kb/html/css
+htmlcgi: ../cgi-bin
+cssDir: perl-web-kb/html/css

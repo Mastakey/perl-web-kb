@@ -1,0 +1,21 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Users > Add
+		<div id="content_section">
+			<h2>Add User</h2>
+			<form action='[% htmlcgi %]/admin/add/addUser.pl' method=post>			
+			<table>
+				<tr><td>Name:</td><td><input type=text name='user_name' id='user_name' /></td></tr>
+				<tr><td>Username:</td><td><input type=text name='user_username' id='user_username' /></td></tr>
+				<tr><td>Email:</td><td><input type=text name='user_email' id='user_email' /></td></tr>
+				<tr><td><input type=submit value=Submit /></td></tr>
+			</table>
+			</form>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]

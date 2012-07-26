@@ -17,6 +17,15 @@
 		<div id="action_section">
 				Actions:
 				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewTagAdd.pl' /></td></tr></table>
+				<h3>Deleted Tags</h3>
+				<table border=1>
+					[% FOREACH dt IN deletedTags %]
+					<tr>
+						<td>[% dt.name %]</td>
+						<td><input type='button' value='Restore' onClick=self.location='[% htmlcgi %]/admin/edit/restoreTag.pl?tag_id=[% dt.id %]' /></td>
+					</tr>
+					[% END %]
+				</table>
 		</div>
 	</div>
 [% INCLUDE footer.tmpl %]

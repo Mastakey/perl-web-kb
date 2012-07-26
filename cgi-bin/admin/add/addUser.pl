@@ -20,19 +20,33 @@ print "Content-type: text/html\n\n";
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_addUser.log');
 my $util = new UTIL();
 
+#INPUT
+my $name = param("user_name");
+my $username = param("user_username");
+my $email = param("user_email");
+
+#VALIDATION
+#TODO
 
 #FUNCTIONAL STUFF
 
 #CONNECT TO DB
 $db->connect();
-#Query
-	my $tags = $util->getAllTags($db);
-#GET deleted Tags
-	my $deletedTags = $util->getDeleted($db, "table_tag");
-
+#INSERT USER
+	my $id = $util->insertUser($db, $name, $username, $email);
+#VALIDATE INSERT
+my $msg = "";
+if ($id > 0)
+{
+	$msg = "Successfully added User with ID: $id";
+}
+else
+{
+	$msg = "Something went wrong: check the log for more details";
+}
 #DISCONNECT DB
 $db->disconnect();
 
@@ -44,13 +58,12 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewTags.tmpl';
-	my $output_file = 'viewTags.html';
+    my $tmpl_file = 'addUser.tmpl';
+	#my $output_file = 'addSection.html';
     my $vars = {
-       tags => $tags,
-	   deletedTags => $deletedTags,
+		msg => $msg,
 	   htmlcgi => $htmlcgi,
-	   cssdir => $cssDir,
+	   cssdir => $cssDir, #used by header.tmpl
     };
 	
     my $template = Template->new( 
@@ -58,11 +71,11 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/admin/view;'.$tmplDir.'/includes',
-			OUTPUT_PATH => $htmlDir.'/admin/view',
+			INCLUDE_PATH => $tmplDir.'/admin/add;'.$tmplDir.'/includes',
+			OUTPUT_PATH => $htmlDir.'/admin/add',
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);
     
-print $template->process($tmpl_file, $vars)
+    print $template->process($tmpl_file, $vars)
         || die "Template process failed: ", $template->error(), "\n";

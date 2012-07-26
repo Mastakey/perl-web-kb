@@ -11,11 +11,13 @@ use CONFIG;
 use UTIL;
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use Cwd;
 
 #WEB INIT
 print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
+my $currentDir = getcwd();
 
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
@@ -60,6 +62,8 @@ $db->connect();
 	my $sections = $util->getAllSections($db, undef, \&printSection);
 	#print Dumper($sections);
 
+#GET deleted Sections
+	my $deletedSections = $util->getDeleted($db, "table_section");
 #DISCONNECT DB
 
 
@@ -83,6 +87,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 	my $output_file = 'viewSections.html';
     my $vars = {
        sections  => $sections,
+	   deletedSections => $deletedSections,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
     };
@@ -99,4 +104,4 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 	);
     
 print $template->process($tmpl_file, $vars)
-        || die "Template process failed: ", $template->error(), "\n";
+        || die "Template process failed: ", $template->error(), "\n Current dir: $currentDir";

@@ -1,0 +1,31 @@
+[% INCLUDE header.tmpl
+	title = 'KB Web Administrator'
+%]
+[% INCLUDE left_section.tmpl
+	title = 'KB Web Administrator'
+%]
+	<div id="main_section">
+	Home > Users
+		<div id="content_section">
+			<h2>Users</h2>
+			<table border=0>
+			[% FOREACH user IN users -%]
+				<tr><td><a href='[% htmlcgi %]/admin/view/viewUser.pl?user_id=[% user.id %]'>[% user.name %]</a></td></tr>
+			[%- END -%]
+			</table>
+		</div>
+		<div id="action_section">
+				Actions:
+				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewUserAdd.pl' /></td></tr></table>
+				<h3>Deleted Users</h3>
+				<table border=1>
+					[% FOREACH du IN deletedUsers %]
+					<tr>
+						<td>[% du.name %]</td>
+						<td><input type='button' value='Restore' onClick=self.location='[% htmlcgi %]/admin/edit/restoreUser.pl?user_id=[% du.id %]' /></td>
+					</tr>
+					[% END %]
+				</table>
+		</div>
+	</div>
+[% INCLUDE footer.tmpl %]
