@@ -1,0 +1,21 @@
+[%- VIEW nested_list -%]
+	[%- BLOCK list %]
+		[% FOREACH i IN item -%]
+			[%- IF i.parent_id -%]
+				<ul>
+			[%- END -%]
+			<li><a href='[% htmlcgi %]/web/view/viewSectionEntries.pl?section_id=[% i.id %]'>[% i.name %]</a></li>
+				[%- IF i.children -%]
+					[%- view.print(i.children.list) -%]
+				[%- END -%]
+			[%- IF i.parent_id -%]
+				</ul>
+			[%- END -%]
+		[%- END -%]
+	[%- END -%]
+[%- END -%]
+<div class="col2">
+<ul>
+[%- nested_list.print(sections) %]
+</ul>
+</div>

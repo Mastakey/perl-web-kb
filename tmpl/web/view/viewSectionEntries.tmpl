@@ -1,0 +1,26 @@
+[% INCLUDE web_header.tmpl
+	title = 'KB Web Viewer'
+%]
+	[% INCLUDE web_main_begin.tmpl %]
+	[% INCLUDE web_breadcrumbs.tmpl %]
+			<h2>[% section.name %]</h2>
+			<table border=1>
+			[% FOREACH entry IN entries -%]
+				<tr>
+					<td><a href='[% htmlcgi %]/web/view/viewEntry.pl?entry_id=[% entry.id %]'>[% entry.name %]</a></td>
+					<td>By: [% entry.username %]</td>
+					<td>Last Updated: [% entry.lastdate %]</td>
+				</tr>
+			[%- END -%]
+			</table>			
+		<div id="action_section">
+				Actions:
+				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/web/view/viewEntryAdd.pl?section_id=[% section.id %]' /></td></tr></table>
+		</div>
+	[% INCLUDE web_main_end.tmpl %]
+	
+	[% INCLUDE web_left_section.tmpl
+		title = 'KB Web Viewer'
+	%]
+
+[% INCLUDE web_footer.tmpl %]

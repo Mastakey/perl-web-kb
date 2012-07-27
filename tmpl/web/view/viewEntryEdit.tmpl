@@ -1,0 +1,23 @@
+[% INCLUDE web_header.tmpl
+	title = 'KB Web Viewer'
+%]
+	[% INCLUDE web_main_begin.tmpl %]
+	[% INCLUDE web_breadcrumbs.tmpl %]
+			<h2>Edit Entry</h2>
+			<form action='[% htmlcgi %]/web/edit/editEntry.pl' method=post>
+				<input type=hidden name='entry_id' id='entry_id' value=[% entry.id %] />
+			<table border=0>
+				<tr><td>Title:</td><td><input type=text name='entry_name' id='entry_name' value='[% entry.entry_name %]' size='80' /></td></tr>
+				<tr><td>Author:</td><td><input type=text name='entry_user' id='entry_user' readonly='readonly' value='[% entry.user_username %]' /> </td></tr>
+				<tr><td>Content:</td><td><textarea cols=75 rows=10 name='entry_content' id='entry_content'>[% entry.content_blob %]</textarea></td></tr>
+				<tr><td>Tags:</td><td><textarea name='entry_tags' id='entry_tags' cols=75 rows=1 >[% tagStr %]</textarea></td></tr>
+				<tr><td></td><td><input type=submit value=Submit /></td></tr>
+			</table>
+			</form>
+	[% INCLUDE web_main_end.tmpl %]
+	
+[% INCLUDE web_left_section.tmpl
+	title = 'KB Web Viewer'
+%]
+
+[% INCLUDE web_footer.tmpl %]

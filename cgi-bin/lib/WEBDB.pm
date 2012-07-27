@@ -173,6 +173,27 @@ sub updateSQL
     }    #$dbh->commit();
 }
 
+sub updateSQLClob
+{
+    my $self = shift;
+    my $sql = shift;
+	my $str = shift;
+    my $dbh = $self->{dbh};
+	my $sth = $dbh->prepare($sql);
+	$sth->bind_param(1, $str);
+    debugLog($sql);
+    eval{
+        $sth->execute();    
+        1;
+    }
+    or do
+    {
+        
+        debugLog("Couldn't execute statement: $sql");
+        die "Couldn't execute statement: $sql";
+    }    #$dbh->commit();
+}
+
 sub insertSQLClob
 {
     my $self = shift;

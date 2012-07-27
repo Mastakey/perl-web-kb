@@ -29,7 +29,10 @@
 		</div>
 		<div id="action_section">
 				Actions:
-				<table border=0><tr><td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewSectionAdd.pl?parent_id=0' /></td></tr></table>
+				<table border=0><tr>
+					<td><input type=button value='Add' onClick=self.location='[% htmlcgi %]/admin/view/viewSectionAdd.pl?parent_id=0' /></td>
+					<td><input type=button value='Update Template' onClick=self.location='[% htmlcgi %]/admin/auto/updateLeftNav.pl' /></td>
+				</tr></table>
 				<h3>Deleted Sections</h3>
 				<table border=1>
 					[% FOREACH ds IN deletedSections %]

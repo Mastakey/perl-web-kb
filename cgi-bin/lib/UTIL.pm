@@ -97,6 +97,27 @@ sub getAllTags
 	return $db->executeSQLHash($query);
 }
 
+sub getAllTagsByEntry
+{
+	#returns an array of tags for a given entry
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $query = qq~
+		SELECT 
+		tag.id, tag.name
+		FROM 
+		table_entry entry, table_entry_tag entry_tag, table_tag tag
+		WHERE
+		entry.id = entry_tag.entry_id AND
+		tag.id = entry_tag.tag_id AND
+		tag.active = 1 AND
+		entry_tag.active = 1 AND
+		entry.id = $entryId
+	~;
+	return $db->executeSQLHash($query);
+}
+
 sub getTag
 {
 	my $self = shift;
@@ -157,7 +178,11 @@ sub getSectionEntries
 	my $db = shift;
 	my $sectionId = shift;
 	my $query = qq~
-		SELECT id, name, user_id, createdate, lastdate FROM table_entry WHERE section_id=$sectionId AND active=1 
+		SELECT entry.id, entry.name, entry.user_id, user.username, entry.createdate, entry.lastdate 
+		FROM table_entry entry, table_user user 
+		WHERE entry.section_id=$sectionId 
+		AND entry.user_id = user.id
+		AND entry.active=1
 	~;
 	return $db->executeSQLHash($query);
 }
@@ -190,12 +215,12 @@ sub getEntry
 	my $query = qq~
 		SELECT 
 		entry.id,
-		entry.name, 
+		entry.name AS entry_name, 
 		content.content_blob,
-		user.name,
+		user.username AS user_username,
 		entry.createdate,
 		entry.lastdate,
-		section.name,
+		section.name AS section_name,
 		entry.active	
 		FROM 
 		table_entry entry,
@@ -230,6 +255,18 @@ sub getUser
 		SELECT id, name, username, email, active FROM table_user WHERE id = $userId
 	~;
 	return $db->executeSQLHash($query);
+}
+
+sub getContentId
+{
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $query = qq~
+		SELECT content_id FROM table_entry WHERE id=$entryId
+	~;
+	my $array = $db->executeSQLHash($query);
+	return $array->[0]->{content_id};
 }
 
 #Writes
@@ -311,10 +348,23 @@ sub insertContent
 	my $content = shift;
 	my $id = 0;
 	my $query = qq~
-		INSERT INTO table_content (content_blob) VALUES (?);
+		INSERT INTO table_content (content_blob) VALUES (?)
 	~;
 	$id = $db->insertSQLClobGetLast($query, $content, 'table_content', 'id');
 	return $id;
+}
+
+sub updateContent
+{
+	my $self = shift;
+	my $db = shift;
+	my $contentId = shift;
+	my $content = shift;
+	my $query = qq~
+		UPDATE table_content SET content_blob=? WHERE id=$contentId
+	~;
+	$db->updateSQLClob($query, $content);
+	return $contentId;
 }
 
 sub insertEntry
@@ -331,6 +381,33 @@ sub insertEntry
 	~;
 	$id = $db->insertSQLGetLast($query, 'table_entry', 'id');
 	return $id;	
+}
+
+sub updateEntry
+{
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $name = shift;
+	my $userId = shift;
+	my $query = qq~
+		UPDATE table_entry SET name='$name', user_id=$userId, lastdate=datetime('now') WHERE id=$entryId
+	~;
+	$db->updateSQL($query);
+	return $entryId;
+}
+
+sub deleteEntry
+{
+	my $self = shift;
+	my $db = shift;
+	my $id = shift;
+
+	my $query = qq~
+		UPDATE table_entry SET active=0 WHERE id=$id
+	~;
+	$db->updateSQL($query);
+	return $id;
 }
 
 sub insertEntryTags
@@ -352,7 +429,48 @@ sub insertEntryTags
 }
 
 
+
+
 #Read and Writes
+
+sub updateEntryTags
+{
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $tagIds = shift;
+	
+	my $select_query = qq~
+		SELECT entry_id, tag_id FROM table_entry_tag WHERE entry_id = $entryId AND active=1
+	~;
+	
+	my $tagArray = $db->executeSQLHash($select_query);
+	
+	#ADDING TAGS
+	foreach my $tagId (@$tagIds)
+	{
+		if (!_isInArrayHash($tagId, $tagArray, 'tag_id'))
+		{
+			my $query = qq~
+				INSERT INTO table_entry_tag (entry_id, tag_id, active) VALUES ($entryId, $tagId, 1);
+			~;
+			my $id = $db->insertSQLGetLast($query, 'table_entry_tag', 'id');
+		}
+	}
+	
+	#DELETING TAGS
+	foreach my $tag (@$tagArray)
+	{
+		if (!_isInArray($tag->{tag_id}, $tagIds))
+		{
+			my $query = qq~
+				UPDATE table_entry_tag SET active=0 where tag_id=$tag->{tag_id} AND entry_id=$entryId;
+			~;
+			$db->updateSQL($query);
+		}
+	}	
+}
+
 sub getAndCreateTags
 {
 	my $self = shift;
@@ -376,6 +494,41 @@ sub getAndCreateTags
 #=====================================================================
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#INTERNAL Functions #
+sub _isInArray
+{
+	my $item = shift;
+	my $array = shift;
+	foreach my $a (@$array)
+	{
+		if ($item eq $a)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+
+sub _isInArrayHash
+{
+	my $item = shift;
+	my $array = shift;
+	my $key = shift;
+	foreach my $a (@$array)
+	{
+		if ($item eq $a->{$key})
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+#END INTERNAL Functions #
+#=====================================================================
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Tests
 
 sub test_parseTags
@@ -384,8 +537,43 @@ sub test_parseTags
 	my @tags = $util->parseTags("database, sqlite");
 	print Dumper(@tags);
 }
+
+sub test_updateContent
+{
+	my $util = new UTIL();
+	my $logDir = '../../log';
+	my $dbCon = "dbi:SQLite:dbname=../../db/data/kb_1.db";
+	my $db = new WEBDB($dbCon, "", "", $logDir.'/db_UTIL_updateContent.log');
+	my $str = qq~
+	Testing 13
+	fdsa
+	~;
+	$db->connect();
+	#$util->getAllUsers($db);
+	$util->updateContent($db, 1, $str);
+	$db->disconnect();
+}
+
+sub test_getAndCreateTags
+{
+	my $util = new UTIL();
+	my $logDir = '../../log';
+	my $dbCon = "dbi:SQLite:dbname=../../db/data/kb_1.db";
+	my $db = new WEBDB($dbCon, "", "", $logDir.'/db_UTIL_getAndCreateTags.log');
+	$db->connect();
+	my $tagStr = "Database,Test3,Test4";
+	my $tags = $util->parseTags($tagStr);
+	my $tagIds = $util->getAndCreateTags($db, $tags);
+	$util->updateEntryTags($db, 1, $tagIds);
+	$db->disconnect();
+	#print Dumper($array);
+}
+
 #=====================================================================
 
+#test_getAndCreateTags();
+
+#test_updateContent();
 
 #test_parseTags();
 
