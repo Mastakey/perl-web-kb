@@ -71,6 +71,9 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);
-    
-print $template->process($tmpl_file, $vars, $output_file)
+	
+$template->process($tmpl_file, $vars)
+        || die "Template process failed: ", $template->error(), "\n Current dir: $currentDir";
+		
+$template->process($tmpl_file, $vars, $output_file)
         || die "Template process failed: ", $template->error(), "\n Current dir: $currentDir";

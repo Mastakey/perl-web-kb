@@ -170,6 +170,11 @@ Dynamic Pages:
 viewSection.pl?sectionId=$sectionId
 
 TODO
+----
+Upload files to Entries
+Entry content for code, links etc
+View Entries by Tag
+
 Hide parent id and show parent name in forms
-Show deleted sections
+Show deleted sections - Done
 Ability to hide/show Section tree
