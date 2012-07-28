@@ -27,7 +27,8 @@ my $configDir = $cfg->{CONFIG}->{configDir};
 
 
 #FUNCTIONAL STUFF
-
+my $breadcrumbs = [
+];
 
 #TEMPLATE STUFF
 use Template;
@@ -40,6 +41,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'index.tmpl';
 	my $output_file = 'index.html';
     my $vars = {
+	   breadcrumbs => $breadcrumbs,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
     };

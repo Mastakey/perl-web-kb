@@ -33,6 +33,26 @@ sub parseTags
 	}
 	return \@parsedTagArray;
 }
+
+#make html
+sub makePrettyHTML
+{
+	my $self = shift;
+	my $str = shift;
+	$str =~ s/\</&lt/g;
+	$str =~ s/\>/&gt/g;
+	return $str;
+}
+
+sub sanitizeLink
+{
+	my $self = shift;
+	my $str = shift;
+	$str =~ s/\+/\&#43;/g;
+	$str =~ s/\&/\&amp;/g;
+	return $str;
+}
+
 #End General Functions #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #DB Functions #
@@ -220,6 +240,7 @@ sub getEntry
 		user.username AS user_username,
 		entry.createdate,
 		entry.lastdate,
+		section.id AS section_id,
 		section.name AS section_name,
 		entry.active	
 		FROM 

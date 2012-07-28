@@ -36,6 +36,8 @@ $db->connect();
 
 #GET Entry
 my $entry = $util->getEntry($db, $entry_id);
+#REPLACE < and > with &ltd and &gt
+$entry->[0]->{content_blob} = $util->makePrettyHTML($entry->[0]->{content_blob});
 
 #GET ENTRY TAGS
 my $tags = $util->getAllTagsByEntry($db, $entry_id);
