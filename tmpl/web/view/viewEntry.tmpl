@@ -7,14 +7,14 @@
 		<table>
 			<tr><td>By: [% entry.user_username%] | Last Updated: [% entry.lastdate %]</td></tr>
 			<tr><td><pre>[% entry.content_blob %]</pre></td></tr>
-			<tr><td>Tags: [% FOREACH tag IN tags -%]<a href=''>[% tag.name %]</a> [% END %]</td></tr>
+			<tr><td>Tags: [% FOREACH tag IN tags -%]<a href='[% htmlcgi %]/web/view/viewTagEntries.pl?tag_id=[% tag.id %]'>[% tag.name %]</a> [% END %]</td></tr>
 		</table>
 	<div id="action_section">
 			Actions:
 			<table border=0>
 			<tr>
-			<td><input type=button value='Edit' onClick=self.location='[% htmlcgi %]/web/view/viewEntryEdit.pl?entry_id=[% entry.id %]' /></td>
-			<td><input type=button value='Delete' onClick=self.location='[% htmlcgi %]/web/delete/deleteEntry.pl?entry_id=[% entry.id %]' /></td>
+			<td><a href='[% htmlcgi %]/web/view/viewEntryEdit.pl?entry_id=[% entry.id %]&section_id=[% entry.section_id %]' class='myButton'>Edit Entry</a></td>
+			<td><a href='[% htmlcgi %]/web/delete/deleteEntry.pl?entry_id=[% entry.id %]&section_id=[% entry.section_id %]' class='myButton'>Delete Entry</a></td>
 			</tr>
 			</table>
 	</div>

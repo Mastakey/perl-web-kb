@@ -1,0 +1,5 @@
+<a href='[% htmlcgi %]/web/view/index.pl'>Home</a>
+> <a href='[% htmlcgi %]/web/view/viewTags.pl'>Tags</a>
+[%- IF tag.id -%]
+ > <a href='[% htmlcgi %]/web/view/viewTagEntries.pl?tag_id=[% tag.id %]'>[% tag.name %]</a>
+[%- END -%]

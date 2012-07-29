@@ -42,6 +42,10 @@ $entry->[0]->{content_blob} = $util->makePrettyHTML($entry->[0]->{content_blob})
 #GET ENTRY TAGS
 my $tags = $util->getAllTagsByEntry($db, $entry_id);
 
+#Breadcrumbs
+my $section_id = $entry->[0]->{section_id};
+my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+
 #DISCONNECT DB
 $db->disconnect();
 
@@ -56,6 +60,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'viewEntry.tmpl';
 	my $output_file = 'viewEntry.html';
     my $vars = {
+	   breadcrumbs => $breadcrumbs,
        entry => $entry->[0],
 	   tags => $tags,
 	   htmlcgi => $htmlcgi,

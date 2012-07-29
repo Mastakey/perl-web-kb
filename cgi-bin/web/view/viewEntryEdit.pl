@@ -24,6 +24,7 @@ my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewEntryEdit.log');
 my $util = new UTIL();
 
 #INPUT
+my $section_id = param("section_id");
 my $entry_id = param("entry_id");
 
 #VALIDATION
@@ -46,6 +47,9 @@ foreach my $tag (@$tags)
 	$tagStr.=$tag->{name}.",";
 }
 
+#Breadcrumbs
+my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+
 #DISCONNECT DB
 $db->disconnect();
 
@@ -60,6 +64,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'viewEntryEdit.tmpl';
 	my $output_file = 'viewEntryEdit.html';
     my $vars = {
+	   breadcrumbs => $breadcrumbs,
        entry => $entry->[0],
 	   tagStr => $tagStr, 
 	   htmlcgi => $htmlcgi,

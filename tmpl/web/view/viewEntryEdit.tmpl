@@ -6,6 +6,7 @@
 			<h2>Edit Entry</h2>
 			<form action='[% htmlcgi %]/web/edit/editEntry.pl' method=post>
 				<input type=hidden name='entry_id' id='entry_id' value=[% entry.id %] />
+				<input type=hidden name='section_id' id='section_id' value=[% entry.section_id %] />
 			<table border=0>
 				<tr><td>Title:</td><td><input type=text name='entry_name' id='entry_name' value='[% entry.entry_name %]' size='80' /></td></tr>
 				<tr><td>Author:</td><td><input type=text name='entry_user' id='entry_user' readonly='readonly' value='[% entry.user_username %]' /> </td></tr>

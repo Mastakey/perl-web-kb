@@ -53,11 +53,55 @@ sub sanitizeLink
 	return $str;
 }
 
+sub _reverse
+{
+	my $arrayRef = shift;
+	my @bc = @$arrayRef;
+	@bc = reverse(@bc);
+	return \@bc
+}
+
 #End General Functions #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #DB Functions #
 
 #Generic Reads
+
+sub getBreadcrumbSections
+{
+	my $self = shift;
+	my $db = shift;
+	my $sectionId = shift;
+	my $breadcrumbs = $self->getBreadcrumbSectionsRec($db, $sectionId);
+	my $crumbs = _reverse($breadcrumbs);
+	return $crumbs;
+}
+
+
+sub getBreadcrumbSectionsRec
+{
+	my $self = shift;
+	my $db = shift;
+	my $sectionId = shift;
+	my @breadcrumbs = ();
+	my $query = qq~
+		SELECT id, parent_id, name FROM table_section WHERE id=$sectionId
+	~;
+	my $section = $db->executeSQLHash($query);
+	if (@$section)
+	{
+		push(@breadcrumbs, @$section);
+		my $parent_id = $section->[0]->{parent_id};
+		if ($parent_id > 0 && defined($parent_id) && $parent_id ne "" && $parent_id ne "NULL")
+		{
+			my $crumbs = $self->getBreadcrumbSections($db, $parent_id);
+			my $bcs = _reverse($crumbs);
+			push(@breadcrumbs, @$bcs);
+		}
+	}
+	return \@breadcrumbs; 
+}
+
 sub getDeleted
 {
 	my $self = shift;
@@ -213,16 +257,13 @@ sub getTagEntries
 	my $db = shift;
 	my $tagId = shift;
 	my $query = qq~
-		SELECT entry.id, entry.name, user.name, entry.createdate, entry.lastdate 
+		SELECT entry.id, entry.name, entry.user_id, user.username, entry.createdate, entry.lastdate 
 		FROM table_entry entry, table_user user, table_entry_tag entry_tag, table_tag tag 
-		WHERE 
-		entry.user_id = user.id 
-		AND
-		entry.id = entry_tag.entry_id
-		AND
-		entry_tag.tag_id = tag.id
-		AND
-		tag.id = $tagId
+		WHERE entry.user_id = user.id 
+		AND entry.id = entry_tag.entry_id
+		AND entry_tag.tag_id = tag.id
+		AND tag.id = $tagId
+		AND entry_tag.active=1
 	~;
 	return $db->executeSQLHash($query);
 }
@@ -590,7 +631,26 @@ sub test_getAndCreateTags
 	#print Dumper($array);
 }
 
+sub test_breadCrumbSections
+{
+	my $util = new UTIL();
+	my $logDir = '../../log';
+	my $dbCon = "dbi:SQLite:dbname=../../db/data/kb_1.db";
+	my $db = new WEBDB($dbCon, "", "", $logDir.'/db_UTIL_getAndCreateTags.log');
+	$db->connect();
+	my $section_id = 8;
+	my $breadcrumbs = $util->getBreadcrumbSectionsRec($db, $section_id);
+	#my $bc = $util->_reverse($breadcrumbs);
+	#print Dumper($breadcrumbs);
+	#my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+	print Dumper($breadcrumbs);
+	$db->disconnect();
+	#print Dumper($array);
+}
+
 #=====================================================================
+
+#test_breadCrumbSections();
 
 #test_getAndCreateTags();
 

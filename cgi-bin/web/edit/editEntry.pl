@@ -24,6 +24,7 @@ my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_editEntry.log');
 my $util = new UTIL();
 
 #INPUTS
+my $section_id = param("section_id");
 my $entry_id = param("entry_id");
 my $name = param("entry_name");
 my $username = param("entry_user");
@@ -72,6 +73,10 @@ else
 {
 	$msg = "Something went wrong: check the log for more details";
 }
+
+#Breadcrumbs
+my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+
 #DISCONNECT DB
 $db->disconnect();
 
@@ -86,6 +91,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'editEntry.tmpl';
 	my $output_file = 'editwEntry.html';
     my $vars = {
+	   breadcrumbs => $breadcrumbs,
        msg => $msg,
 	   entry_id => $id,
 	   htmlcgi => $htmlcgi,

@@ -20,30 +20,21 @@ print "Content-type: text/html\n\n";
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewSectionEntries.log');
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewTags.log');
 my $util = new UTIL();
-
-#INPUT
-my $section_id = param("section_id");
 
 #FUNCTIONAL STUFF
 
 #CONNECT TO DB
 $db->connect();
 
-#GET Section
-my $section = $util->getSection($db, $section_id);
-#GET Entries
-my $entries = $util->getSectionEntries($db, $section_id);
-
-#Breadcrumbs
-my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+#GET Entry
+my $tags = $util->getAllTags($db);
 
 #DISCONNECT DB
 $db->disconnect();
 
 #TEMPLATE STUFF
-
 use Template;
 
 my $tmplDir = $cfg->{CONFIG}->{tmplDir};
@@ -51,12 +42,10 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'viewSectionEntries.tmpl';
-	my $output_file = 'viewSectionEntries.html';
+    my $tmpl_file = 'viewTags.tmpl';
+	my $output_file = 'viewTags.html';
     my $vars = {
-	   breadcrumbs => $breadcrumbs,
-	   section => $section->[0],
-       entries => $entries,
+	   tags => $tags,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
     };

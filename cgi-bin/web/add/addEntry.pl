@@ -72,6 +72,10 @@ else
 {
 	$msg = "Something went wrong: check the log for more details";
 }
+
+#Breadcrumbs
+my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
+
 #DISCONNECT DB
 $db->disconnect();
 
@@ -86,8 +90,9 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'addEntry.tmpl';
 	#my $output_file = 'addSection.html';
     my $vars = {
-		entry_id => $id,
-		msg => $msg,
+	   breadcrumbs => $breadcrumbs,
+	   entry_id => $id,
+	   msg => $msg,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir, #used by header.tmpl
     };

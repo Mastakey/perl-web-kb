@@ -24,6 +24,7 @@ my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_deleteEntry.log');
 my $util = new UTIL();
 
 #INPUTS
+my $section_id = param("section_id");
 my $entry_id = param("entry_id");
 
 #FUNCTIONAL STUFF
@@ -36,6 +37,9 @@ my $id = $util->deleteEntry($db, $entry_id);
 
 #TODO
 my $msg = "Successfully deleted Entry with ID: $id";
+
+#Breadcrumbs
+my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
 
 #DISCONNECT DB
 $db->disconnect();
@@ -51,6 +55,7 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
     my $tmpl_file = 'deleteEntry.tmpl';
 	my $output_file = 'deleteEntry.html';
     my $vars = {
+	   breadcrumbs => $breadcrumbs,
        msg => $msg,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,

@@ -2,8 +2,8 @@
 	title = 'KB Web Viewer'
 %]
 	[% INCLUDE web_main_begin.tmpl %]
-	[% INCLUDE web_breadcrumbs.tmpl %]
-			<h2>[% section.name %]</h2>
+	[% INCLUDE web_breadcrumbs_tag.tmpl %]
+			<h2>[% tag.name %]</h2>
 			<table class="gridtable">
 			[% FOREACH entry IN entries -%]
 				<tr>
@@ -15,7 +15,6 @@
 			</table>			
 		<div id="action_section">
 				Actions:
-				<table border=0><tr><td><a href='[% htmlcgi %]/web/view/viewEntryAdd.pl?section_id=[% section.id %]' class="myButton">Add Entry</a></td></tr></table>
 		</div>
 	[% INCLUDE web_main_end.tmpl %]
 	

@@ -32,6 +32,74 @@ img {
 	padding-top:10px;
 }
 
+/* Table sytles */
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	text-align: left;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+table.gridtableInsert {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+}
+table.gridtableInsert th {
+	border-width: 1px;
+	padding: 8px;
+}
+table.gridtableInsert td {
+	vertical-align:top;
+	border-width: 1px;
+	padding: 8px;
+}
+
+/* Button links */
+.myButton {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #CCCFFF) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #CCCFFF 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#CCCFFF');
+	background-color:#ededed;
+	-moz-border-radius:13px;
+	-webkit-border-radius:13px;
+	border-radius:13px;
+	display:inline-block;
+	color:#000000;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 9px;
+	text-decoration:none;
+}.myButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #CCCFFF), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #CCCFFF 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCFFF', endColorstr='#ededed');
+	background-color:#CCCFFF;
+	color:#369;
+	text-decoration:none;
+}.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 /* Header styles */
 #top_section {
 	clear:both;

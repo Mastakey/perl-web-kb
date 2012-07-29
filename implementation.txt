@@ -169,17 +169,31 @@ Dynamic Pages:
 --------------
 viewSection.pl?sectionId=$sectionId
 
+FTP Deploy
+----------
+Transfer 
+perl-web-kb/html
+perl-web-kb/tmpl
+perl-web-kb/config
+cgi-bin/perl-web-kb/lib
+	DO NOT COPY TEMPLATE OR YAML
+	DELETE if neccessary
+cgi-bin/perl-web-kb/web
+cgi-bin/perl-web-kb/func
+cgi-bin/perl-web-kb/admin
+
 TODO
 ----
-breadcrumbs
-CSS for table, buttons
-View Entries by Tag
+breadcrumbs - Done
+CSS for table, buttons - Done
+ftp deploy script - Need to be a separate project create a perl FTPDEPLOY.pm
+View Entries by Tag - Done
+Password protect - Done
+
 Admin Entries
 Move entries on Admin
 Admin: Ordering of Sections, Entries
 
-ftp deploy script
-Password protect
 Upload files to Entries
 Entry content for code, links etc
 

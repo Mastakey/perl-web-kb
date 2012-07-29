@@ -1,0 +1,18 @@
+[% INCLUDE web_header.tmpl
+	title = 'KB Web Viewer'
+%]
+	[% INCLUDE web_main_begin.tmpl %]
+	[% INCLUDE web_breadcrumbs_tag.tmpl %]
+		<h2>Tags</h2>
+		[%- FOREACH tag IN tags -%]
+			<a href='[% htmlcgi %]/web/view/viewTagEntries.pl?tag_id=[% tag.id %]'>[% tag.name %],</a> 
+		[% END %]
+	<div id="action_section">
+	</div>
+	[% INCLUDE web_main_end.tmpl %]
+		
+	[% INCLUDE web_left_section.tmpl
+		title = 'KB Web Viewer'
+	%]
+
+[% INCLUDE web_footer.tmpl %]
