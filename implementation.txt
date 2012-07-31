@@ -195,10 +195,10 @@ Move entries on Admin
 Admin: Ordering of Sections, Entries
 
 Upload files to Entries
-Entry content for code, links etc
+Entry content for code, links etc - integrate with http://alexgorbatchev.com/SyntaxHighlighter/
 
 Hide parent id and show parent name in forms
 Show deleted sections - Done
 Ability to hide/show Section tree
 
-LOGIN system!
+LOGIN system! - Done?
