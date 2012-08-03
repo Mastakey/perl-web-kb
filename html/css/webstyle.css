@@ -33,11 +33,21 @@ img {
 }
 pre.content
 {
+	padding: 2px;
 	width: 800px;
 	overflow: scroll; 
 	border-style:solid; 
 	border-width:1px;
 }
+
+img.delete
+{
+	padding: 0px;
+	margin: 0px;
+	width: 15px;
+	height: 15px;
+}
+
 /* Table sytles */
 table.gridtable {
 	font-family: verdana,arial,sans-serif;
@@ -209,7 +219,14 @@ table.gridtableInsert td {
 .leftmenu .col2 {
 	width:21%;			/* left column content width (column width minus left and right padding) */
 	left:6%;			/* (right column left and right padding) plus (left column left padding) */
+
 }
+
+#action_section {
+	padding-top: 5px;
+	
+}
+
 /* Footer styles */
 #footer {
 	clear:both;

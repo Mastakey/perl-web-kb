@@ -22,9 +22,11 @@ my $currentDir = getcwd();
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-#my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_index.log');
-#my $util = new UTIL();
+my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_search.log');
+my $util = new UTIL();
 
+#INPUT
+my $search_str = param("search_str");
 
 #FUNCTIONAL STUFF
 my $breadcrumbs = [
@@ -38,9 +40,10 @@ my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
 
-    my $tmpl_file = 'index.tmpl';
-	my $output_file = 'index.html';
+    my $tmpl_file = 'search.tmpl';
+	my $output_file = 'search.html';
     my $vars = {
+	   search_str => $search_str,
 	   breadcrumbs => $breadcrumbs,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
@@ -51,8 +54,8 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/web/view;'.$tmplDir.'/includes',
-			OUTPUT_PATH => $htmlDir.'/web/view',
+			INCLUDE_PATH => $tmplDir.'/web/search;'.$tmplDir.'/includes',
+			OUTPUT_PATH => $htmlDir.'/web/search',
 			PRE_PROCESS => $configDir.'/tmpl.cfg',
 		}
 	);

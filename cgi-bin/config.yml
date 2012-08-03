@@ -13,3 +13,4 @@ db_odbc_pass:
 htmlcgi: ../cgi-bin
 cssDir: perl-web-kb/html/css
 uploadDir: perl-web-kb/uploads
+uploadLinkOffset: ../../../../perl-web-kb/uploads

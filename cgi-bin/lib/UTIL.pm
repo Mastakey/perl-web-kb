@@ -356,14 +356,15 @@ sub getAllAttachmentsByEntry
 	my $db = shift;
 	my $entryId = shift;
 	my $query = qq~
-		SELECT attach.name, attach.filename 
+		SELECT attach.id, attach.name, attach.filename 
 		FROM table_attachment attach, 
 		table_entry entry, 
 		table_entry_attachment entry_attach
 		WHERE 
 		entry.id = $entryId AND
 		entry_attach.entry_id = entry.id AND
-		entry_attach.attachment_id = attach.id
+		entry_attach.attachment_id = attach.id AND
+		attach.active = 1
 	~;
 	return $db->executeSQLHash($query);
 }
@@ -552,6 +553,18 @@ sub insertEntryAttachment
 		INSERT INTO table_entry_attachment (entry_id, attachment_id, active) VALUES ($entry_id, $attach_id, 1)
 	~;
 	$id = $db->insertSQLGetLast($query, 'table_entry_attachment', 'id');
+	return $id;	
+}
+
+sub deleteAttachment
+{
+	my $self = shift;
+	my $db = shift;
+	my $id = shift;
+	my $query = qq~
+		UPDATE table_attachment SET active=0 WHERE id=$id
+	~;
+	$db->updateSQL($query);
 	return $id;	
 }
 

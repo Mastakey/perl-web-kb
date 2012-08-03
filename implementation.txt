@@ -188,14 +188,14 @@ CSS for table, buttons - Done
 ftp deploy script - Need to be a separate project create a perl FTPDEPLOY.pm
 View Entries by Tag - Done
 Password protect - Done
+Upload files to Entries - Done
 
 TODO
 ----
 Admin Entries
 Move entries on Admin
 Admin: Ordering of Sections, Entries
-
-Upload files to Entries
+Search
 	
 Entry content for code, links etc - integrate with http://alexgorbatchev.com/SyntaxHighlighter/
 

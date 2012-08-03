@@ -1,0 +1,14 @@
+<html>
+<head>
+<script type="text/javascript">
+function refreshParent() {
+	window.opener.location.reload();	
+}
+</script>
+</head>
+<body onload="refreshParent();">
+Attachment with id: [% attach_id %] successfully removed
+<br />
+<a href='' onclick='window.close();'>Close Window</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[% INCLUDE web_header.tmpl
+	title = 'KB Web Viewer'
+%]
+	[% INCLUDE web_main_begin.tmpl %]
+	[% INCLUDE web_breadcrumbs.tmpl %] 
+	> Search Results
+
+			<h2>Search Results</h2>
+			Results for [% search_str %]
+			<h3><h3>
+
+		<div id="action_section">
+		</div>
+	[% INCLUDE web_main_end.tmpl %]
+	
+	[% INCLUDE web_left_section.tmpl
+		title = 'KB Web Viewer'
+	%]
+
+[% INCLUDE web_footer.tmpl %]

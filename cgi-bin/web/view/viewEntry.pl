@@ -70,7 +70,8 @@ my $entryDir = $cfg->{CONFIG}->{uploadLinkOffset}.'/'.$entry_id;
 	   attachments => $attachments,
 	   htmlcgi => $htmlcgi,
 	   cssdir => $cssDir,
-	   entryDir => $entryDir,
+	   htmldir => $htmlDir,
+	   entrydir => $entryDir,
     };
 	
     my $template = Template->new( 

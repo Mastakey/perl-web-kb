@@ -7,8 +7,8 @@
 			<h2>Home</h2>
 			Click on a section on the left to get started!
 			<br />Or ...<br />
-			<form action='' method=POST>
-				Search: <input type=text id='search_str' name='search_str' />
+			<form action='[% htmlcgi %]/web/search/search.pl' method=POST>
+				<table><tr><td>Search:</td><td><input type=text id='search_str' name='search_str' /></td><td><input type=submit value='Go!' /></td></tr></table>
 			</form>
 
 		<div id="action_section">
