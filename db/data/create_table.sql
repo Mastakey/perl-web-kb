@@ -48,3 +48,22 @@ active INTEGER NOT NULL,
 FOREIGN KEY(entry_id) REFERENCES table_entry(id),
 FOREIGN KEY(tag_id) REFERENCES table_tag(id)
 );
+CREATE TABLE table_attachment
+(
+id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+name TEXT NOT NULL,
+filename TEXT NOT NULL,
+description TEXT,
+createdate TEXT,
+lastdate TEXT,
+active INTEGER NOT NULL
+);
+CREATE TABLE table_entry_attachment
+(
+id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+entry_id INTEGER NOT NULL,
+attachment_id INTEGER NOT NULL,
+active INTEGER NOT NULL,
+FOREIGN KEY(entry_id) REFERENCES table_entry(id),
+FOREIGN KEY(attachment_id) REFERENCES table_attachment(id)
+);

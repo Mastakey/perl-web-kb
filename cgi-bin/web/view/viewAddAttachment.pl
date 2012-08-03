@@ -16,41 +16,13 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 print "Content-type: text/html\n\n";
 
 #CONFIG SUTFF
-
 my $cfg = new CONFIG('../');
 my $logDir = $cfg->{CONFIG}->{logDir};
 my $configDir = $cfg->{CONFIG}->{configDir};
-my $db = new WEBDB($cfg->{DBCON}, "", "", $logDir.'/db_viewEntry.log');
 my $util = new UTIL();
 
-#INPUT
+#INPUT 
 my $entry_id = param("entry_id");
-
-#VALIDATION
-#TODO
-
-#FUNCTIONAL STUFF
-
-#CONNECT TO DB
-$db->connect();
-
-#GET Entry
-my $entry = $util->getEntry($db, $entry_id);
-#REPLACE < and > with &ltd and &gt
-$entry->[0]->{content_blob} = $util->makePrettyHTML($entry->[0]->{content_blob});
-
-#GET ENTRY TAGS
-my $tags = $util->getAllTagsByEntry($db, $entry_id);
-
-#GET ENTRY ATTACHMENTS
-my $attachments = $util->getAllAttachmentsByEntry($db, $entry_id);
-
-#Breadcrumbs
-my $section_id = $entry->[0]->{section_id};
-my $breadcrumbs = $util->getBreadcrumbSections($db, $section_id);
-
-#DISCONNECT DB
-$db->disconnect();
 
 #TEMPLATE STUFF
 use Template;
@@ -59,18 +31,13 @@ my $tmplDir = $cfg->{CONFIG}->{tmplDir};
 my $htmlDir = $cfg->{CONFIG}->{htmlDir};
 my $htmlcgi = $cfg->{CONFIG}->{htmlcgi};
 my $cssDir = $cfg->{CONFIG}->{cssDir};
-my $entryDir = $cfg->{CONFIG}->{uploadLinkOffset}.'/'.$entry_id;
 
-    my $tmpl_file = 'viewEntry.tmpl';
-	my $output_file = 'viewEntry.html';
+    my $tmpl_file = 'viewAddAttachment.tmpl';
+	#my $output_file = 'viewSectionAdd.html';
     my $vars = {
-	   breadcrumbs => $breadcrumbs,
-       entry => $entry->[0],
-	   tags => $tags,
-	   attachments => $attachments,
+	   entry_id => $entry_id,
 	   htmlcgi => $htmlcgi,
-	   cssdir => $cssDir,
-	   entryDir => $entryDir,
+	   cssdir => $cssDir, #used by header.tmpl
     };
 	
     my $template = Template->new( 

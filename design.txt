@@ -36,6 +36,13 @@ table_entry_tag:
 
 active is a flag (0 or 1) that determines if the current element is active or not
 
+#ADDED IN
+table_attachment
+	id, name, filename, description, createdate, lastdate, active
+	
+table_entry_attachment:
+	id, entry_id, attachment_id, active	
+	
 4. UI Design
 ------------
 Initial View: 

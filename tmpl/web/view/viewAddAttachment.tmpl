@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Attach File</title>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<form action='[% htmlcgi %]/web/upload/uploadAttachment.pl' method='POST' enctype="multipart/form-data">
+<input type=hidden id='entry_id' name='entry_id' value=[% entry_id %] />
+<table>
+	<tr><td>Name:</td><td><input type=text id='name' name='name'/></td></tr>
+	<tr><td>File:</td><td><input type='file' name='file_1' id='file_1' /></td></tr>
+	<tr><td></td><td><input type=submit value='Attach' /></td></tr>
+</table>
+</form>
+* Files with the same filename will be overwritten.
+</body>
+</html>

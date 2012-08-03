@@ -53,6 +53,25 @@ sub sanitizeLink
 	return $str;
 }
 
+sub unTaint
+{
+	my $self = shift;
+	my $str = shift;
+	my $safe_filename_characters = "a-zA-Z0-9_.-";
+	my $old_str = $str;
+	$str =~ tr/ /_/;
+	$str =~ s/[^$safe_filename_characters]//g;
+	if ($str =~ /^([$safe_filename_characters]+)$/ ) 
+	{
+		$str = $1;
+	}
+	else
+	{
+		die "$old_str contains invalid characters";
+	}
+	return $str;
+}
+
 sub _reverse
 {
 	my $arrayRef = shift;
@@ -331,6 +350,24 @@ sub getContentId
 	return $array->[0]->{content_id};
 }
 
+sub getAllAttachmentsByEntry
+{
+	my $self = shift;
+	my $db = shift;
+	my $entryId = shift;
+	my $query = qq~
+		SELECT attach.name, attach.filename 
+		FROM table_attachment attach, 
+		table_entry entry, 
+		table_entry_attachment entry_attach
+		WHERE 
+		entry.id = $entryId AND
+		entry_attach.entry_id = entry.id AND
+		entry_attach.attachment_id = attach.id
+	~;
+	return $db->executeSQLHash($query);
+}
+
 #Writes
 sub restoreItem
 {
@@ -490,8 +527,33 @@ sub insertEntryTags
 	return \@ids;	
 }
 
+sub insertAttachment
+{
+	my $self = shift;
+	my $db = shift;
+	my $name = shift;
+	my $filename = shift;
+	my $id = 0;
+	my $query = qq~
+		INSERT INTO table_attachment (name, filename, createdate, lastdate, active) VALUES ('$name', '$filename', datetime('now'), datetime('now'), 1)
+	~;
+	$id = $db->insertSQLGetLast($query, 'table_attachment', 'id');
+	return $id;	
+}
 
-
+sub insertEntryAttachment
+{
+	my $self = shift;
+	my $db = shift;
+	my $entry_id = shift;
+	my $attach_id = shift;
+	my $id = 0;
+	my $query = qq~
+		INSERT INTO table_entry_attachment (entry_id, attachment_id, active) VALUES ($entry_id, $attach_id, 1)
+	~;
+	$id = $db->insertSQLGetLast($query, 'table_entry_attachment', 'id');
+	return $id;	
+}
 
 #Read and Writes
 

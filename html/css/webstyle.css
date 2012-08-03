@@ -31,7 +31,13 @@ img {
 	display:block;
 	padding-top:10px;
 }
-
+pre.content
+{
+	width: 800px;
+	overflow: scroll; 
+	border-style:solid; 
+	border-width:1px;
+}
 /* Table sytles */
 table.gridtable {
 	font-family: verdana,arial,sans-serif;
