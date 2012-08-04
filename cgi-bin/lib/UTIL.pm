@@ -132,6 +132,18 @@ sub getDeleted
 	return $db->executeSQLHash($query);
 }
 
+#Search
+sub searchContent
+{
+	my $self = shift;
+	my $db = shift;
+	my $search_str = shift;
+	my $query = qq~
+		SELECT id FROM table_content WHERE content_blob like '%$search_str%'
+	~;
+	return $db->executeSQLHash($query);
+}
+
 #Reads
 sub getUserId
 {
