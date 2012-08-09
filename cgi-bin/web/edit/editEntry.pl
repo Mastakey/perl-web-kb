@@ -103,9 +103,9 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/web/edit;'.$tmplDir.'/includes',
+			INCLUDE_PATH => $tmplDir.'/web/edit;'.$tmplDir.'/includes;'.$configDir,
 			OUTPUT_PATH => $htmlDir.'/web/edit',
-			PRE_PROCESS => $configDir.'/tmpl.cfg',
+			PRE_PROCESS => 'tmpl.cfg',
 		}
 	);
     

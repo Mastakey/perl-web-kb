@@ -66,9 +66,9 @@ my $cssDir = $cfg->{CONFIG}->{cssDir};
 			RELATIVE => 1,
 			RECURSION => 1,
 			DELIMITER => ';',
-			INCLUDE_PATH => $tmplDir.'/admin/auto;'.$tmplDir.'/includes',
+			INCLUDE_PATH => $tmplDir.'/admin/auto;'.$tmplDir.'/includes;'.$configDir,
 			OUTPUT_PATH => $tmplDir.'/includes',
-			PRE_PROCESS => $configDir.'/tmpl.cfg',
+			PRE_PROCESS => 'tmpl.cfg',
 		}
 	);
 	
